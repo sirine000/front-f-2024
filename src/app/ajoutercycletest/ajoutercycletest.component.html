@@ -1,26 +1,43 @@
 <section>
-   <app-header></app-header>
+  <app-header></app-header>
 </section>
 
 <section>
- <div clasx="div0">
-<div class="container">
-   <form class="formMod"   [formGroup]="forminput"   >
-    <div class="form-group">
-      <!-- <div *ngIf="id_formateur">
+  <div clasx="div0">
+    <div class="container">
+      <form class="formMod" [formGroup]="forminput">
+        <div class="form-group">
+          <!-- <div *ngIf="id_formateur">
         <p>Nom et prénom du formateur : {{ getformateur() }}</p> -->
 
-        <label for="NomCycle">Nom de cycle</label>
-        <input type="text" class="form-control" id="NomCycle" placeholder="Nom du cycle" name="nomCycleDeFormation"   [(ngModel)]="cycles.nomCycleDeFormation" formControlName="nomCycleDeFormation">
+          <label for="NomCycle">Nom de cycle</label>
+          <input
+            type="text"
+            class="form-control"
+            id="NomCycle"
+            placeholder="Nom du cycle"
+            name="nomCycleDeFormation"
+            [(ngModel)]="cycles.nomCycleDeFormation"
+            formControlName="nomCycleDeFormation"
+          />
 
-        <div *ngIf="forminput.get('nomCycleDeFormation')?.invalid && (forminput.get('nomCycleDeFormation')?.dirty || forminput.get('nomCycleDeFormation')?.touched)">
-          <div class="alert alert-danger" *ngIf="forminput.get('nomCycleDeFormation')?.errors?.['required']">
-            Champ requis !
+          <div
+            *ngIf="
+              forminput.get('nomCycleDeFormation')?.invalid &&
+              (forminput.get('nomCycleDeFormation')?.dirty ||
+                forminput.get('nomCycleDeFormation')?.touched)
+            "
+          >
+            <div
+              class="alert alert-danger"
+              *ngIf="forminput.get('nomCycleDeFormation')?.errors?.['required']"
+            >
+              Champ requis !
+            </div>
           </div>
         </div>
-      </div>
 
-<!--
+        <!--
       </div>
      </div>
        <div class="form-group">
@@ -33,42 +50,109 @@
           </div>
         </div>
        </div> -->
-       <div class="form-group">
-         <label for="exampleInputPassword1">Description : </label>
-         <input type="Text" class="form-control" id="description" placeholder="text" name="description" [(ngModel)]="cycles.description" formControlName="description">
-         <div  *ngIf="forminput.get('description')?.invalid && (forminput.get('description')?.dirty || forminput.get('description')?.touched)">
-          <div class="alert alert-danger " *ngIf="forminput.get('description')?.errors?.['required']">
-           champs requis !
+        <div class="form-group">
+          <label for="exampleInputPassword1">Description : </label>
+          <input
+            type="Text"
+            class="form-control"
+            id="description"
+            placeholder="text"
+            name="description"
+            [(ngModel)]="cycles.description"
+            formControlName="description"
+          />
+          <div
+            *ngIf="
+              forminput.get('description')?.invalid &&
+              (forminput.get('description')?.dirty ||
+                forminput.get('description')?.touched)
+            "
+          >
+            <div
+              class="alert alert-danger"
+              *ngIf="forminput.get('description')?.errors?.['required']"
+            >
+              champs requis !
+            </div>
           </div>
-       </div>
-       <div class="form-group">
-           <label for="exampleInputPassword1">Prix : </label>
-           <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Prix dt" name="prix" [(ngModel)]="cycles.prix" formControlName="prix">
-           <div  *ngIf="forminput.get('prix')?.invalid && (forminput.get('prix')?.dirty || forminput.get('prix')?.touched)">
-            <div class="alert alert-danger " *ngIf="forminput.get('prix')?.errors?.['required']">
-             champs requis !
-            </div>
-         </div>
-
-         <div class="form-group">
-           <label for="exampleInputPassword1">Date début: </label>
-           <input type="date" class="form-control" id="exampleInputPassword1" placeholder="" name="dateDebut" [(ngModel)]="cycles.dateDebut" formControlName="dateDebut">
-           <div  *ngIf="forminput.get('dateDebut')?.invalid && (forminput.get('dateDebut')?.dirty || forminput.get('dateDebut')?.touched)">
-            <div class="alert alert-danger " *ngIf="forminput.get('dateDebut')?.errors?.['required']">
-             champs requis !
-            </div>
-         </div>
-
-         <div class="form-group">
-            <label for="exampleInputPassword1">Date fin: </label>
-            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="" name="dateFin" [(ngModel)]="cycles.dateFin" formControlName="dateFin">
-            <div  *ngIf="forminput.get('dateFin')?.invalid && (forminput.get('dateFin')?.dirty || forminput.get('dateFin')?.touched)">
-              <div class="alert alert-danger " *ngIf="forminput.get('dateFin')?.errors?.['required']">
-               champs requis !
+          <div class="form-group">
+            <label for="exampleInputPassword1">Prix : </label>
+            <input
+              type="tel"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Prix dt"
+              name="prix"
+              [(ngModel)]="cycles.prix"
+              formControlName="prix"
+            />
+            <div
+              *ngIf="
+                forminput.get('prix')?.invalid &&
+                (forminput.get('prix')?.dirty || forminput.get('prix')?.touched)
+              "
+            >
+              <div
+                class="alert alert-danger"
+                *ngIf="forminput.get('prix')?.errors?.['required']"
+              >
+                champs requis !
               </div>
-          </div>
+            </div>
 
-<!--
+            <div class="form-group">
+              <label for="exampleInputPassword1">Date début: </label>
+              <input
+                type="date"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder=""
+                name="dateDebut"
+                [(ngModel)]="cycles.dateDebut"
+                formControlName="dateDebut"
+              />
+              <div
+                *ngIf="
+                  forminput.get('dateDebut')?.invalid &&
+                  (forminput.get('dateDebut')?.dirty ||
+                    forminput.get('dateDebut')?.touched)
+                "
+              >
+                <div
+                  class="alert alert-danger"
+                  *ngIf="forminput.get('dateDebut')?.errors?.['required']"
+                >
+                  champs requis !
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Date fin: </label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder=""
+                  name="dateFin"
+                  [(ngModel)]="cycles.dateFin"
+                  formControlName="dateFin"
+                />
+                <div
+                  *ngIf="
+                    forminput.get('dateFin')?.invalid &&
+                    (forminput.get('dateFin')?.dirty ||
+                      forminput.get('dateFin')?.touched)
+                  "
+                >
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="forminput.get('dateFin')?.errors?.['required']"
+                  >
+                    champs requis !
+                  </div>
+                </div>
+
+                <!--
             <div class="form-group">
               <label for="id_formateur">Formateur:</label>
               <select class="form-control" id="id_formateur" name="id_formateur" formControlName="id_formateur" [(ngModel)]="id_formateur"   >
@@ -78,8 +162,7 @@
 
               </select> -->
 
-
-<!--
+                <!--
   </div>
               <div  *ngIf="forminput.get('formateur')?.invalid && (forminput.get('formateur')?.dirty || forminput.get('formateur')?.touched)">
                 <div class="alert alert-danger " *ngIf="forminput.get('formateur')?.errors?.['required']">
@@ -88,19 +171,19 @@
 
             </div> -->
 
-
-
-       &nbsp;
-       <button class="button"    type="submit" (click)="ajouter()"  >Enregistrer  </button>
-      <div *ngIf="formSubmitted" class="alert alert-info">
-         {{submissionMessage }}</div>
-
-       </div>
-         </div>
+                &nbsp;
+                <button class="button" type="submit" (click)="ajouter()">
+                  Enregistrer
+                </button>
+                <div *ngIf="formSubmitted" class="alert alert-info">
+                  {{ submissionMessage }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-       </div>
 
-<!--
+        <!--
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"  id="ajoutermodal">
     <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
@@ -119,3 +202,7 @@
 </div>
 </div>
 <tr>    -->
+      </form>
+    </div>
+  </div>
+</section>

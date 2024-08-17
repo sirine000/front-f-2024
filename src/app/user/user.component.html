@@ -1,21 +1,62 @@
-<p>user works!</p>
-<h1> bonjour</h1>
+<!-- <p>user works!</p>
+<h1> bonjour</h1> -->
 
-<!-- 
-    ts to html
-  with attribut:   <p><b>welcome</b> {{name}}</p>
-with function:
-{{getlocation()}} 
-from html to ts : 
-<button (click)="getmessage()"> envoyer </button>
 
-$  --> 
 
-<!-- two way binding: <form>
-    <input  type="text" class="form-control" [(ngmodel)]="message"> {{ message }}
-</form>  -->
-<!-- 
-<button (click)="confirmdelete()">delete</button>
-<div id="deletemodel">
-<p>show</p>
-</div> -->
+<section>
+  <!-- <section id="first" class="story" data-speed="8" data-type="background">
+    <div class="smashinglogo" id="welcomeimg" data-type="sprite" data-offsetY="100" data-Xposition="50%" data-speed="-2"></div>
+</section> -->
+  <div class="sidebar">
+     <!-- <a class="navbar-brand" href="#"> -->
+     <img src="../../assets/images/EXPLORE TON POTENTIEL (5).png" alt="" width="60" height="60" class="logo">
+       <!-- </a>  -->
+
+
+       <div class="sea" >
+        <!-- <form class="d-flex" role="search" >
+          <input class="form-control me-2" type="search" placeholder="search..." aria-label="Search" >
+          <button class="btn btn-outline-success" type="submit" class="search">Rechercher</button>
+        </form> -->
+        <!-- <div  *ngIf="formateurconnecte">
+          <h1>Bienvenue {{formateurconnecte.nomEtPrenom}}</h1> -->
+         <!-- </div>  -->
+      </div>
+
+
+
+      <ul class="barre">
+
+          <div class="title">
+            <button class="m-1">
+            <!-- <a href="#" class="link"> -->
+              <i class='bx bx-grid-alt bx-hover  bx-tada bx-flip-horizontal' ></i>    <span>dashboard</span>
+
+                                          </button>
+                                          <br>
+              <!-- <button ><i class='bx bx-book-add bx-tada' ></i><span>Ajouter un cours</span></button>  -->
+            <button  class="m-1"(click)="cycleparticipant()"><i class='bx bx-book-add bx-hover  bx-tada bx-flip-horizontal' ></i>Liste des cycles</button>
+            <br>
+            <button class="m-1" (click)="coursparticipant()" >
+              <i   class='bx bxs-book bx-hover  bx-tada bx-flip-horizontal' ></i><span>Mes cours</span>
+
+
+        </button>
+        <br>
+            <button class="m-1" (click)="certificats()" >
+                <i   class='bx bxs-note bx-hover bx-tada bx-flip-horizontal' ></i><span>Liste de certificats</span>
+
+          </button>
+          <!-- <br><br>
+          <button (click)="">
+
+              <i class='bx bx-group bx-tada bx-flip-horizontal' ></i>
+              <span>Liste de participant</span>
+          </button>
+          <br><br>
+    <button (click)=""><i class='bx bx-book-add bx-tada' ></i>Liste des cycles</button> -->
+    <br>
+      <button class="m-1"  (click)="comptee()" ><i class='bx bxs-user bx-tada bx-flip-horizontal'></i>Mon compte</button>
+      <button class="m-1" (click)="deconnecter()"><i class='bx bx-user bx-tada bx-flip-horizontal' ></i>Déconnexion</button>
+  </div>
+

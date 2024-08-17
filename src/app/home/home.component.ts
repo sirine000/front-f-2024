@@ -39,16 +39,22 @@ export class HomeComponent {
     this.router.navigate(['./user']);
   }
   GoToParticipantLogin() {
-    this.router.navigate(['./home']);
-  }
+this.router.navigate(['/home']).then(() => {
+  window.scrollTo(0, 0);
+});  }
   seconnecteruser() {
     this.router.navigate(['./creercompte']);
+  }
+
+  offreemploi() {
+    this.router.navigate(['./offreemploi']);
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
       this.userService.login(this.loginForm.value).subscribe(
         (response: any) => {
+             localStorage.setItem('participant', JSON.stringify(response));
           this.snackBar.open('Connexion réussite', 'Fermer', {
             duration: 3000,
           });

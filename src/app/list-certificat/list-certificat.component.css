@@ -1,0 +1,84 @@
+.formateurs {
+  padding-top: 50px;
+}
+
+.tab {
+  margin-left: 20%;
+}
+
+/* .tab1{
+        width: 80%;
+        margin-top:-40%;
+    } */
+td {
+  text-align: center;
+
+}
+
+/* section{
+        background-color: rgb(255, 249, 249);
+    } */
+a {
+  margin: 4%;
+}
+
+.mod {
+  margin-left: 1%;
+  flex: content;
+
+}
+
+table {
+  margin-top: -35%;
+  margin-bottom: 20%;
+  /* background-color: #fffec2; */
+  color: rgb(0, 0, 0);
+  width: 100%;
+  margin-left: 14%;
+  border-radius: 20px;
+  background: #faf8f8;
+  box-shadow: 35px 35px 100px #cacaca,
+    -35px -35px 100px #f6f6f6;
+  font-family: cursive;
+
+
+}
+
+button {
+  height: 20%;
+  font-family: cursive;
+
+}
+
+.bxs-edit .icon {
+  height: 20%;
+  background: #000000;
+}
+
+tr th td {
+  /* border:2px solid #000000; */
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 35px 35px 100px #cacaca,
+    -35px -35px 100px #f6f6f6;
+  font-family: 'Brush Script MT';
+  font-size: 70%;
+
+}
+
+td {
+  border: 2px solid #d7d7d7;
+}
+
+th {
+  background-color: #000000;
+  border: 2px solid #a2a2a2;
+  color: rgb(180, 180, 180);
+  font-family: 'Brush Script MT';
+  font-size: 185%;
+}
+
+#deleteModal,
+#updateModal {
+  font-family: cursive;
+}

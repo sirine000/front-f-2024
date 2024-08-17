@@ -29,6 +29,10 @@ export class FormateurMenuComponent implements OnInit {
 
     // window.location.reload();
   }
+  listCoursFormateur() {
+        this.router.navigate(['./listcoursformateur']);
+
+  }
   gobackconnecte() {
     this.router.navigate(['./seconnecterformateur']);
   }

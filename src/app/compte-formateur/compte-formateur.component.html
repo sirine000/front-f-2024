@@ -1,8 +1,8 @@
 <!-- formateur.component.html -->
 <div class="d-inline">
   <app-formateur-menu></app-formateur-menu>
-
-  <div class="container position-relative" style="top:-95vh;">
+<div class="container">
+  <div class="container position-relative" style="top:-103vh;">
     <div class="main-body">
       <!-- Breadcrumb -->
       <nav aria-label="breadcrumb" class="main-breadcrumb">
@@ -20,12 +20,12 @@
             <div class="card-body">
               <div class="d-flex flex-column align-items-center text-center">
 <div (click)="fileInput.click()" style="cursor: pointer;">
-  <img [src]="imgSrc ? imgSrc : '../../../assets/image/formateur.png'" alt="Formateur" class="rounded-circle" width="150">
+  <img [src]="imgSrc ? imgSrc : '../../../assets/image/formateur.png'" alt="Formateur" class="rounded-circle" width="200">
 </div>                <div class="mt-3">
                   <p class="text-secondary mb-1">Formateur</p>
-                   <h4>{{ formateurForm.value.nomEtPrenom }}</h4>
-                  <p class="text-muted font-size-sm">{{ formateurForm.value.email }}</p>
-                   <button class="btn btn-outline-primary" (click)="uploadPhoto()">Upload Photo</button>
+                   <h4><strong>{{ formateurForm.value.nomEtPrenom }}</strong></h4>
+                  <h4><strong>{{ formateurForm.value.email }}</strong></h4> &nbsp;
+                   <button class="btn btn-outline-primary" (click)="uploadPhoto()">Enregistrer la Photo</button>
                    <input #fileInput type="file" (change)="onFileSelected($event)" style="display: none;">
 
                 </div>
@@ -66,7 +66,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-12">
-                    <button type="submit" class="btn btn-info">Update</button>
+                    <button type="submit" class="btn btn-secondary" class="up">Modifer</button>
                   </div>
                 </div>
               </form>
@@ -76,4 +76,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

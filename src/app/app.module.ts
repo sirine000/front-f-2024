@@ -31,6 +31,21 @@ import { CompteFormateurComponent } from './compte-formateur/compte-formateur.co
 import { CertificatComponent } from './certificat/certificat.component';
 import { SafePipe } from './safe.pipe';
 import { CompteAdminComponent } from './compte-admin/compte-admin.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ListCoursFormateurComponent } from './list-cours-formateur/list-cours-formateur.component';
+import { OffreemploiComponent } from './offreemploi/offreemploi.component';
+import { ProfilparticipantComponent } from './profilparticipant/profilparticipant.component';
+import { CompteparticipantComponent } from './compteparticipant/compteparticipant.component';
+import { CycleparticipantComponent } from './cycleparticipant/cycleparticipant.component';
+import { CoursparticipantComponent } from './coursparticipant/coursparticipant.component';
+import { DemandeInscriptionComponent } from './demande-inscription/demande-inscription.component';
+import { ListeCandidatsComponent } from './liste-candidats/liste-candidats.component';
+import { ListCertificatComponent } from './list-certificat/list-certificat.component';
+import { AjouteroffreComponent } from './ajouteroffre/ajouteroffre.component';
+import { ListeoffresComponent } from './listeoffres/listeoffres.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +75,18 @@ import { CompteAdminComponent } from './compte-admin/compte-admin.component';
     CompteFormateurComponent,
     CertificatComponent,
     SafePipe,
-    CompteAdminComponent
+    CompteAdminComponent,
+    ListCoursFormateurComponent,
+    OffreemploiComponent,
+    ProfilparticipantComponent,
+    CompteparticipantComponent,
+    CycleparticipantComponent,
+    CoursparticipantComponent,
+    DemandeInscriptionComponent,
+    ListeCandidatsComponent,
+    ListCertificatComponent,
+    AjouteroffreComponent,
+    ListeoffresComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +96,10 @@ import { CompteAdminComponent } from './compte-admin/compte-admin.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

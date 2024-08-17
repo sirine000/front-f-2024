@@ -1,0 +1,49 @@
+<app-user></app-user>
+
+
+
+      <div class="container mx-auto mt-5 formateurs" style="position: relative;top:-106vh;">
+      <table class="table mt-5 pt-5 border border-1">
+        <thead class="text-center ">
+          <tr class="text-center">
+            <th  scope="col">id</th>
+            <th scope="col">Cycle</th>
+            <th scope="col">Nom et prenom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Certificat</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+<tr *ngFor="let cycle of validCycles; let i = index">
+  <td>{{i + 1}}</td>
+  <td>{{cycle.nom_cycle_de_formation}}</td>
+  <td>{{participant.nom}} {{participant.prenom}}</td>
+  <td>{{participant.email}}</td>
+  <td>
+    <div>
+      <button (click)="openCertif(participant.nom,participant.prenom, cycle.nom_cycle_de_formation, cycle.dateFin)" class="btn btn-primary">
+        <i class="bx bx-file"></i> Voir Certif
+      </button>
+    </div>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- Modal for displaying the image -->
+<!-- <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cv</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img [src]="selectedImageUrl" alt="Bon de commande" class="img-fluid" />
+      </div>
+    </div>
+  </div> -->

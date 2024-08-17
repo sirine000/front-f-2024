@@ -2,10 +2,10 @@
 <app-header></app-header>
 
 <div class="container mt-5 justfiy-content-center align-items-center">
-  <div class="heading">Ajouter un formateur</div>
+  <!-- <div class="heading">Ajouter un formateur</div> -->
 
   <form class="form" [formGroup]="forminput">
-    <img src="../../assets/images/addddd.jpg" class="image2">
+    <img src="../../assets/images/lock.gif" class="image2">
 
     <label>
       <span class="m-2 pr-2">Nom et prénom</span>
@@ -70,6 +70,9 @@
     </label>
 
     <button class="login-button" (click)="ajouterformateur()" type="submit">Enregistrer</button>
+    <!-- <div class="alert alert-danger" >
+      {{submissionMessage}}
+    </div>  -->
   </form>
 </div>
 </div>

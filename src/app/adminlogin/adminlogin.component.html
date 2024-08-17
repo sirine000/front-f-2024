@@ -1,15 +1,53 @@
-<form (ngSubmit)="onSubmit()" class="form">
-  <p class="form-title">Se connecter à votre compte</p>
-  <div class="input-container">
-    <input type="email" placeholder="Entrez votre email" [(ngModel)]="email" name="email" required>
+<section >
+    <article class="imgg">
+
+  <div class="row">
+
+
+    <!-- <div class="row"> -->
+  <nav class="mask">
+    <img src="../../assets/images/EXPLORE TON POTENTIEL (5).png"  class="logo">
+         <!-- </a>  -->
+
+<!--
+      <ul class="list">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="search">Search</button>
+      <button class="menu">Menu</button> -->
+    </nav>
+<!--
+    <button type="button" class="bou">se connecter </button> -->
+    </div>
+
+
+
+    </article>
+    </section>
+
+<div class="container w-auto h-auto">
+  <!-- <img src="./../../assets/images/graph.gif" class="newgif"> -->
+
+<form (ngSubmit)="onSubmit()"  class="p-3">
+  <!-- <p class="form-title">Se connecter à votre compte</p> -->
+  <img src="./../../assets/images/adminnnnnnn.gif" class="newgif">
+
+  <div class="input-container w-100">
+    <input  type="email" placeholder="Entrez votre email" [(ngModel)]="email" name="email" required>
     <span></span>
   </div>
-  <div class="input-container">
-    <input type="password" placeholder="Entrez votre mot de passe" [(ngModel)]="password" name="password" required>
+  <div class="input-container w-100 ">
+    <input  type="password" placeholder="Entrez votre mot de passe" [(ngModel)]="password" name="password" required>
   </div>
-  <button type="submit" class="submit">Se connecter</button>
-  <p class="signup-link">
+  <button type="submit" class="submit w-100">Se connecter</button>
+    <button type="button" (click)="goToHome()" class="accueil w-100">Accueil</button>
+
+  <!-- <p class="signup-link">
     Pas de compte?
     <a routerLink="/home">Accueil</a>
-  </p>
+  </p> -->
 </form>
+</div>

@@ -1,78 +1,59 @@
+<div>
+  <app-formateur-menu></app-formateur-menu>
 
-<app-formateur-menu></app-formateur-menu>
-<html>
-<body>
+  <section>
+    <div class="container">
+      <form class="form">
+        <div>
+          <label for="nomCours">Nom du Cours</label>
+          <input
+            class="input"
+            type="text"
+            id="nomCours"
+            placeholder="Nom de cours"
+            [(ngModel)]="nomCours"
+            name="nomCours"
+            required
+          />
+        </div>
 
+        <div class="mt-1">
+          <label class="font-bold" for="description">Description</label>
+          <textarea
+            class="input"
+            id="description"
+            placeholder="Description"
+            [(ngModel)]="description"
+            name="description"
+          ></textarea>
+        </div>
 
-        <!-- <div clasx="div0"> -->
-       <div class="container">
-          <form class="form" >
-              <div >
-                <label for="exampleInputEmail1"> </label>
-                <!-- <input type="text" class="form-control" id="NomCycle"  placeholder="Nom de cours" name="Nom_Cycle" > -->
-                <input  class="input" type="text" name="nomCours" id="nomCours" placeholder="Nom de cours" [(ngModel)]="nomCours">
+        <input type="hidden" name="idCycle" [(ngModel)]="idCycle" />
 
-              </div>
-              <div >
-                <!-- <label for="exampleInputPassword1">Description : </label> -->
-                <!-- <input type="Text" class="form-control" id="description" placeholder="Description" name="description" > -->
-                <!-- <input required="" class="input" type="email" name="nomEtPrenom" id="nomEtPrenom" placeholder="description" > -->
+        <div class="formm w-100">
+          <label for="file-input" class="drop-container p-2">
+            <span class="form-title">Déposez vos fichiers</span>
+            <input
+              class="p-2"
+              type="file"
+              id="file-input"
+              (change)="onFileChange($event)"
+              accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.rar"
+              multiple
+              required
+            />
+          </label>
+        </div>
 
-              </div>
-              <input  type="hidden" name="idCycle" [(ngModel)]="idCycle">
+        <input
+          class="login-button"
+          type="submit"
+          value="Enregistrer"
+          (click)="uploadFiles()"
+        />
+      </form>
 
-              <div class="formm">
-                <span class="form-title">Déposez vos fichier !</span>
-               
-                 <label for="file-input" class="drop-container">
-                <!-- <span class="drop-title">Drop files here</span>
-                or -->
-                <input  type="file"   id="file-input"   (change)="onFileChange($event)"  multiple>
-                                <!-- <input type="file" accept="image/*" required="" id="file-input"> -->
-                               
-              </label>
-
-               <!-- <div  *ngIf="selectedFiles.length > 0">
-                <h4 >Fichiers sélectionnés :</h4>
-                <ul> 
-                  <li *ngFor="let file of selectedFiles">
-                    {{ file.name }}
-                  </li> 
-                </ul>
-              </div>  -->
-            </div>
-              
-              <!-- <label for="myfile">Selectionner un fichier : </label> &nbsp;
-             <img src="./../../assets/images/pdf.png" width="10%"><input   src="./../../assets/images/pdf.png"type="file" id="myfile" name="myfile"><br><br> -->
-              <!-- <input type="submit"> -->
-                         
-       <!--        
-              <button type="submit"   (click)="ajoutercycle()">Enregistrer</button> -->
-           <!-- <button type="button" type="submit"    >Enregistrer</button>  -->
-              <!-- <button type="button" class="btn btn-secondary btn-lg">Large button</button> -->
-         
-              <input class="login-button" type="submit" value="Enregistrer" (click)="uploadFiles()" >
-
-        <p>{{message }}</p>
-          </form>
-          </div>
-      
-
-<!-- <h1>Show File-select Fields</h1>
-
-<h3>Show a file-select field which allows only one file to be chosen:</h3>
-<form action="/action_page.php">
-  <label for="myfile">Select a file:</label>
-  <input type="file" id="myfile" name="myfile"><br><br>
-  <input type="submit">
-</form>
-
-<h3>Show a file-select field which allows multiple files:</h3>
-<form action="/action_page.php">
-  <label for="myfile">Select files:</label>
-  <input type="file" id="myfile" name="myfile" multiple><br><br>
-  <input type="submit">
-</form>
-
-</body>
-</html> -->
+      <p>{{ message }}</p>
+    </div>
+  </section>
+</div>

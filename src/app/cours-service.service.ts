@@ -1,85 +1,51 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Cours } from 'src/models/cours';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CoursServiceService {
+  private coursUrl = 'http://localhost:8082/cours';
 
-
-  private coursUrl = 'http://localhost:8082/cours'; 
-
-  constructor(private http: HttpClient) { }
-
-  
-  // uploadFile(file: File, nomCours: string): Observable<string> {
-  //   const formData: FormData = new FormData();
-  //   formData.append('fichier', file, file.name);
-  //   formData.append('nomCours', nomCours);
-
-  //   return this.http.post(`${this.coursUrl}/upload`, formData, {
-  //     responseType: 'text'  // Spécifiez que la réponse est de type texte
-  //   });
-  
-  // uploadFileAndAssociateWithCycle(file: File, nomCours: string, idCycle: number): Observable<any> {
-  //   const formData: FormData = new FormData();
-  //   formData.append('fichier', file);
-  //   formData.append('nomCours', nomCours);
-  //   formData.append('idCycle', idCycle.toString());
-
-  //   return this.http.post(`${this.coursUrl}/upload`, formData, {
-  //     responseType: 'text' // or 'json' if you want to parse the response as JSON
-  //   });
-  // }
-
-  // uploadFilesAndAssociateWithCycle(formData: FormData, idCycle: number): Observable<any> {
-  //   return this.http.post(`${this.coursUrl}/upload?idCycle=${idCycle}`, formData, {
-  //     responseType: 'text' // or 'json' if you want to parse the response as JSON
-  //   });
-  // }
-
+  constructor(private http: HttpClient) {}
 
   selectedFiles!: FileList;
   nomCours!: string;
   idCycle!: number;
 
-
-  onFileSelected(event: any) {
-    this.selectedFiles = event.target.files;
-  }
-
-  // onUpload() :Observable<any> {
-  //   const formData: FormData = new FormData();
-  //   for (let i = 0; i < this.selectedFiles.length; i++) {
-  //     formData.append('fichiers', this.selectedFiles[i], this.selectedFiles[i].name);
-  //   }
-  //   formData.append('nomCours', this.nomCours);
-  //   formData.append('idCycle', this.idCycle.toString());
-
-  //   this.http.post(this.coursUrl+"./uploadss", formData)
-  //     .subscribe(response => {
-  //       console.log('Upload response:', response);
-  //     });
-
-  //     return this.http.post(`${this.baseUrl}/inserercyclecours`, formData);
-  // }
-  private coursU = 'http://localhost:8082/cours/inserercyclecours'; 
-  uploadMultipleFiles(files: File[], nomCours: string, idCycle: number): Observable<any> {
+  uploadMultipleFiles(
+    files: File[],
+    nomCours: string,
+    description: string,
+    idCycle: number
+  ): Observable<any> {
     const formData: FormData = new FormData();
-    files.forEach(file => formData.append('fichiers', file));
+    files.forEach((file) => formData.append('fichiers', file));
     formData.append('nomCours', nomCours);
+    formData.append('description', description);
     formData.append('idCycle', idCycle.toString());
 
-    return this.http.post(this.coursU, formData, {
+    return this.http.post(`${this.coursUrl}/inserercyclecours`, formData, {
       headers: new HttpHeaders({
-        'enctype': 'multipart/form-data'
+        enctype: 'multipart/form-data',
       }),
-      responseType: 'text'
+      responseType: 'text',
     });
   }
 
-  // onUpload(formData: FormData): Observable<any> {
-  //   return this.http.post(`${this.coursUrl}/inserercyclecours`, formData);
-  // }
+  modifierCours(id: number, cours: Cours): Observable<Cours> {
+    return this.http.put<Cours>(`${this.coursUrl}/update/${id}`, cours);
+  }
+
+  getCoursesByCycle(cycleId: number): Observable<Cours[]> {
+    return this.http.get<Cours[]>(`${this.coursUrl}/cycle/${cycleId}`);
+  }
+
+  getCoursesByCycleId(cycleId: number): Observable<any> {
+    return this.http.get(`${this.coursUrl}/cycle/${cycleId}`, {
+      params: { cycleId },
+    });
+  }
 }

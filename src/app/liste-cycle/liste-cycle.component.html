@@ -1,22 +1,9 @@
 
-
+<div class="d-flex justify-content-between ">
 <!-- <section> -->
-    <app-header></app-header>
+    <app-header class="col-2"></app-header>
     <!-- </section> -->
-    <!-- <tr  *ngFor="let liste of listecycle">
-
-
-      <td>{{liste.id}}</td>
-      <td>{{liste.NomCycle}}</td>
-      <td>{{liste.description}}</td>
-      <td>{{liste.prix}}</td>
-      <td>{{liste.dateDebut}}</td>
-      <td>{{liste.dateFin}}</td>
-         <td>{{liste.nom_prof}}</td>
-
-
-</tr> -->
-
+<div class="container col-10 " style="position: relative;top:155vh;" >
 <section class="card-area pb-5">
 
   <div class="container">
@@ -33,9 +20,9 @@
               <div class="card-content">
                  <h4 class="card-title">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <p class="idd"><strong class="cen">ID : {{liste.idCycle}}</strong></p>
+                  <p class="idd"><strong class="cen">ID : {{liste.id}}</strong></p>
                   <p> <strong>Nom :</strong>
-                     {{liste.nomCycleDeFormation}}</p>
+                     {{liste.nom_cycle_de_formation}}</p>
                  </h4>
 
 
@@ -45,9 +32,9 @@
                 <p><strong>Prix :</strong> {{liste.prix}}</p>
                 <p><strong>Date Début :</strong> {{liste.dateDebut}}</p>
                  <p><strong>Date Fin :</strong> {{liste.dateFin}}</p>
-                 <p *ngIf="liste.formateurs"><strong>nom de formateur :</strong> {{liste.formateurs.nomEtPrenom}}</p><br><br>
+                 <p *ngIf="liste.formateur"><strong>nom de formateur :</strong> {{liste.formateur.nomEtPrenom}}</p><br><br>
                  <div class="container" class="con">
-                  <p><strong>Nom de cours :</strong></p>
+                  <p><strong>Nom de cours :</strong> {{liste.nom_cycle_de_formation}}</p>
                  <p *ngIf="liste.formateurs"><strong>Les cours ajoutés :</strong> {{liste.formateurs.nomEtPrenom}}</p>
                 </div>
 <br><br>
@@ -55,8 +42,9 @@
                  <!-- <p ><strong>Formateur :</strong>{{onOptionSelected(nom_prof)}}</p> -->
                  <!-- &nbsp;&nbsp;&nbsp;  -->
                  <!-- <button class="button"><a href="modifierCycle">modifier</a> </button> &nbsp;  <button  class="button" (click)="supprimercycle(liste.id)">supprimer</button> -->
-                 <button class="button"><a (click)="confirmationmodifierCycle(liste.idCycle)">Modifier</a> </button> &nbsp;
-                 <button  class="button"><a (click)="confirmdelete(liste)">Supprimer</a></button> &nbsp;
+
+                 <button class="button" (click)="openUpdateModal(liste)">Modifier </button> &nbsp;
+                 <button  class="button"(click)="confirmdelete(liste)">Supprimer</button> &nbsp;
                  <!-- <button  class="button"><a (click)="confirmdelete(liste)"> Détails</a></button> -->
 
 
@@ -69,106 +57,75 @@
       </div>
 
 
+</div></div></section>
+</div>
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"  id="deleteModal">
-         <div class="modal-dialog modal-dialog-centered" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h5 class="modal-title">confimation de suppression</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-     </div>
-         <div class="modal-body">
-           <p>vous êtes sûr de vouloir supprimer ?</p>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  class="mod" (click)="deletec()">oui</button>
-           <button type="button" class="btn btn-danger" class="mod"  (click)="closeDelete()" >non</button>
-         </div>
-       </div>
-     </div>
-   </div>
-   <!-- <tr>
+ <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header font-bold">
+        <h5 class="modal-title">Confirmation de suppression</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Vous êtes sûr de vouloir supprimer ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="deletec()">Oui</button>
+        <button type="button" class="btn btn-danger" (click)="closeDelete()">Non</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-         <a><i class='bx bxs-edit' ></i></a>
-         <a><i class='bx bxs-trash' ></i></a>
-
-   </tr> -->
-
-
-
-
-
-
-<!-- <section> -->
-<!--
-    <section class="tab"> -->
-    <!-- <article class="tab1"> -->
-     <!--<table class="table table-striped">
-        <thead class="text-center">
-          <tr class="text-center">
-            <th  scope="col">id</th>
-            <th scope="col">Nom de cycle</th>
-
-            <th scope="col">description</th>
-            <th scope="col">prix :</th>
-            <th scope="col">date Début</th>
-            <th scope="col">date Fin</th>
-            <th scope="col">Nom de formateur</th>
-            <th scope="col">action</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr  *ngFor="let liste of listecycle">
-           // <th scope="row" ></th> -->
-<!--
-            <td>{{liste.id_cycle}}</td>
-            <td>{{liste.NomCycle}}</td>
-            <td>{{liste.description}}</td>
-            <td>{{liste.prix}}</td>
-            <td>{{liste.dateDebut}}</td>
-            <td>{{liste.dateFin}}</td>
-
-
-
-</tr>
-               </tbody>-->
-<!--
-              <td>
-                <a  (click)="closeDelete()"><i class="icon "class='bx bxs-edit' ></i></a>
-                <a (click)="confirmdelete()"><i  class='bx bxs-trash' ></i></a>
-              </td> -->
-
-          <!--</tr>
-          </tbody>
-              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"  id="deleteModal">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">confimation de suppression</h5>
-                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            <!-- </div>
-                <div class="modal-body">
-                  <p>vous êtes sûr de vouloir supprimer ?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  class="mod">oui</button>
-                  <button type="button" class="btn btn-danger" class="mod" >non</button>
-                </div>
-              </div>
-            </div>
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateModalLabel">Modifier le Cycle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmitUpdate()">
+          <div class="mb-3">
+            <label for="nomCycle" class="form-label">Nom du Cycle</label>
+            <input type="text" id="nomCycle" class="form-control" formControlName="nom_cycle_de_formation">
           </div>
-          <tr>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" class="form-control" formControlName="description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="prix" class="form-label">Prix</label>
+            <input type="number" id="prix" class="form-control" formControlName="prix">
+          </div>
+          <div class="mb-3">
+            <label for="dateDebut" class="form-label">Date Début</label>
+            <input type="date" id="dateDebut" class="form-control" formControlName="dateDebut">
+          </div>
+          <div class="mb-3">
+            <label for="dateFin" class="form-label">Date Fin</label>
+            <input type="date" id="dateFin" class="form-control" formControlName="dateFin">
+          </div>
+          <div class="mb-3">
+            <label for="formateur" class="form-label">Formateur</label>
+              <select id="formateur" class="form-control" formControlName="idFormateur">
+              <option *ngFor="let formateur of formateurs" [value]="formateur.id_formateur">{{formateur.nomEtPrenom}}</option>
+            </select>
+          </div>
+           <div class="mb-3 d-none">
+            <label for="idFormateur" class="form-label">id formateur</label>
+            <input type="text" id="idFormateur" class="form-control" formControlName="idFormateur">
+          </div>
+           <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-                <a><i class='bx bxs-edit' ></i></a>
-                <a><i class='bx bxs-trash' ></i></a>
+</div>
 
-          </tr>
-
-
-      </table>
-
-   </article> -->
-    <!-- </section> -->
-
-  <!-- </section>-->

@@ -12,14 +12,26 @@ export class HeaderComponent {
   listeformateur() {
     this.router.navigate(['/listeFormateur']);
   }
+  demandeInscription() {
+    this.router.navigate(['/demande-inscription']);
+  }
+  listeCandidats() {
+    this.router.navigate(['/liste-candidats']);
+  }
   ajouterFormateur() {
     this.router.navigate(['/ajouterformateur']);
   }
   listeparticipant() {
     this.router.navigate(['/listepar']);
   }
+  listeOffres() {
+    this.router.navigate(['/listOffres']);
+  }
   addcycle() {
-    this.router.navigate(['/postcycleetformateur']);
+    this.router.navigate(['/ajouterCycle']);
+  }
+  addOffre() {
+    this.router.navigate(['/ajouterOffre']);
   }
   liste_cycle() {
     this.router.navigate(['/listecycle']);

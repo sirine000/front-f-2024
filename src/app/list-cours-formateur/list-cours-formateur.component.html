@@ -1,0 +1,41 @@
+<div >
+<app-formateur-menu ></app-formateur-menu>
+<div class="container mt-5">
+
+  <!-- Display error message if any -->
+  <div *ngIf="message" class="alert alert-danger">
+    {{ message }}
+  </div>
+
+  <!-- Table to display courses -->
+  <table class="table table-striped" style="position: relative;top:-101vh;right:-80px;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom du Cycle</th>
+        <th>Nom du Cours</th>
+        <th>Description</th>
+        <th>Fichiers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cours of coursList">
+        <td>{{ cours.id }}</td>
+        <td>{{ cours.cycle.nom_cycle_de_formation }}</td>
+        <td>{{ cours.nomCours }}</td>
+        <td>{{ cours.description }}</td>
+        <td>
+          <!-- Display list of files -->
+         <ul style="list-style-type: none; padding:0; ">
+  <li *ngFor="let filePath of cours.fileContents; let i = index">
+    <button (click)="openPdf(filePath)" class="btn btn-primary mb-1">
+      <i class="bx bx-file"></i> Voir cours {{ i + 1 }}
+    </button>
+  </li>
+</ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

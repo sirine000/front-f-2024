@@ -1,11 +1,15 @@
-<div class="d-inline">
+
+
+      <div class="d-inline">
    <app-header></app-header>
 
 
 
-<div class="container h-75 position-relative" style="top:-120px;">
-   <form class="formMod p-1"   [formGroup]="forminput"  >
-       <div class="form-group m-1">
+<div class="container mt-5 justfiy-content-center align-items-center">
+   <form class="form"   [formGroup]="forminput"  >
+
+    <img src="../../assets/images/cccc.gif" class="timee">
+       <div class="form-group">
          <label for="exampleInputEmail1">Nom de cycle</label>
          <label>
           <!-- <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span> -->
@@ -18,15 +22,18 @@
           </div>
 
        </div>
-       <div class="form-group m-1">
+       &nbsp;
+
+       <div class="form-group">
          <label for="exampleInputPassword1">Description  </label>
-         <input type="Text" class="form-control" id="description" placeholder="text" name="description"  formControlName="description">
+         <input type="Text" class="form-control" id="description" placeholder="Description" name="description"  formControlName="description">
          <div  *ngIf="forminput.get('description')?.invalid && (forminput.get('description')?.dirty || forminput.get('description')?.touched)">
           <div class="alert alert-danger " *ngIf="forminput.get('description')?.errors?.['required']">
            champs requis !
           </div>
        </div>
-       <div class="form-group m-1">
+       &nbsp;
+       <div class="form-group">
            <label for="exampleInputPassword1">Prix  </label>
            <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Prix dt" name="prix"  formControlName="prix">
            <div  *ngIf="forminput.get('prix')?.invalid && (forminput.get('prix')?.dirty || forminput.get('prix')?.touched)">
@@ -34,17 +41,19 @@
              champs requis !
             </div>
          </div>
+         &nbsp;
 
-         <div class="form-group m-1">
-           <label for="exampleInputPassword1">Date début</label>
+         <div class="form-group">
+           <label for="exampleInputPassword1" color="white">Date début</label>
            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="" name="dateDebut"  formControlName="dateDebut">
            <div  *ngIf="forminput.get('dateDebut')?.invalid && (forminput.get('dateDebut')?.dirty || forminput.get('dateDebut')?.touched)">
             <div class="alert alert-danger " *ngIf="forminput.get('dateDebut')?.errors?.['required']">
              champs requis !
             </div>
          </div>
+         &nbsp;
 
-         <div class="form-group m-1">
+         <div class="form-group">
             <label for="exampleInputPassword1">Date fin </label>
             <input type="date" class="form-control" id="exampleInputPassword1" placeholder="" name="dateFin"  formControlName="dateFin">
             <div  *ngIf="forminput.get('dateFin')?.invalid && (forminput.get('dateFin')?.dirty || forminput.get('dateFin')?.touched)">
@@ -52,28 +61,24 @@
                champs requis !
               </div>
           </div>
+          &nbsp;
 
-            <div class="form-group m-1">
-              <label for="nomEtPrenom">Formateur</label>
-              <select class="form-control" id="nomEtPrenom" class="select" name="nomEtPrenom"    formControlName="nomEtPrenom"   #dropdown   >
-                <option   class="option"  value="" >--choisir un formateur--</option>
-
-                <option class="option" *ngFor="let formateur of formateurs" [value]="formateur" >{{formateur}}</option>
-
-              </select>
-
-             <div  *ngIf="forminput.get('nomEtPrenom')?.invalid && (forminput.get('nomEtPrenom')?.dirty || forminput.get('nomEtPrenom')?.touched)">
-                <div class="alert alert-danger " *ngIf="forminput.get('nomEtPrenom')?.errors?.['required']">
-                 champs requis !
-                </div>
-
+             <div class="form-group m-1">
+            <label for="idFormateur">Formateur</label>
+            <select class="form-control select" id="idFormateur" name="idFormateur" formControlName="idFormateur" #dropdown>
+               <option class="option" value="">--choisir un formateur--</option>
+               <option class="option" *ngFor="let formateur of formateurs" [value]="formateur?.id_formateur">{{formateur?.nomEtPrenom}}</option>
+            </select>
+            <div *ngIf="forminput.get('idFormateur')?.invalid && (forminput.get('idFormateur')?.dirty || forminput.get('idFormateur')?.touched)">
+               <div class="alert alert-danger" *ngIf="forminput.get('idFormateur')?.errors?.['required']">
+                  champs requis !
+               </div>
             </div>
          </div>
 
 
-
        &nbsp;
-       <button class="button p-3" type="submit"    (click)="ajouter()" >Enregistrer  </button>
+       <button class="button" type="submit"    (click)="ajouter()" >Enregistrer  </button>
        <div *ngIf="formSubmitted" class="alert alert-info">
          {{ submissionMessage }}</div>
 
@@ -83,3 +88,5 @@
          </div></form>
 
 
+
+         </div></div>

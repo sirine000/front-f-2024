@@ -7,41 +7,36 @@
 
 
   <!-- <div class="row"> -->
-<nav class="mask">
-    <img src="../../assets/images/logo.png" alt="" width="60" height="60" class="logo">
-       <!-- </a>  -->
 
 
-    <ul class="list">
-      <li><a routerLink="/home">Accueil</a></li>
-      <li><a href="#">A propos de nous </a></li>
-      <li><a href="#">Nos formations </a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button class="search">Search</button>
-    <button class="menu">Menu</button>
-  </nav>
+   <div class="container"> <h1><strong>" Vous pouvez accomplir ce que les autres considèrent comme impossible."</strong> </h1></div>
 
-  <button type="button" class="bou" style="cursor:pointer;" (click)="creercompte()">se connecter </button>
+  <!-- <button type="button" class="bou" style="cursor:pointer;" (click)="creercompte()">se connecter </button> -->
   <div class="par ">
+    <img src="../../assets/images/EXPLORE TON POTENTIEL (5).png" alt="" width="60" height="60" class="logo2">
 
-      <h1><strong> Site Web E-learning </strong></h1><br>
+      <h2> EXPLORE &nbsp; TON  &nbsp; POTENTIEL  </h2>
 
-    <p>Vous-voulez améliorer vos compétence ? <br> Faire des cours en ligne ou
+      <span>Pour vous inscrire à nos formations
+        <br>Créez votre compte !</span><br><br>
+    <!-- <p>Vous-voulez améliorer vos compétence ? <br> Faire des cours en ligne ou
        en présentiel ?<br>
 
-      Vous êtes dans le bon endroit , créer un compte pour bénéficier de la formation !</p><br>
+      Vous êtes dans le bon endroit , créer un compte pour bénéficier de la formation !</p><br> -->
 
-      <button >  Nos formation ! </button> &nbsp; <a (click)="creercompte()"><button > créer un compte </button></a>
+     <a (click)="offreemploi()"> <button > Nos offres d'emploi </button></a> &nbsp; <a (click)="creercompte()"><button > créer un compte </button></a>
 
 
       <!-- <a href="#" class="noAccount">vous avez déjà un compte</a> -->
 
 
     </div>
+    <!-- <img src=".//./../../assets/images/anbouba.gif" class="lamp"> -->
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form_main">
-        <p class="heading">Se connecter</p>
+
+      <img src="./../../assets/images/vector.gif" width="30%" height="20px" class="vec">
+        <!-- <p class="heading">Se connecter</p> -->
 
       <div class="inputContainer">
         <svg class="inputIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2e2e2e" viewBox="0 0 16 16">
@@ -57,7 +52,7 @@
         <input type="password" class="inputField" formControlName="password" placeholder="Mot de passe" required>
       </div>
 
-      <button id="but" type="submit" class="enter">se connecter</button>
+      <button id="but" type="submit" class="ente">se connecter</button>
 
       <a class="forgotLink" href="#">mot de passe oublié ?</a>
     </form>
@@ -66,7 +61,7 @@
 </article>
 </section>
 
-<section class="cni">
+<!-- <section class="cni">
 
   <div class="card">
     <div class="circle"></div>
@@ -84,15 +79,17 @@
 <div class="circle" class="c2"></div>
 <div class="circle"></div>
 
-</section>
+</section> -->
 
-<article>
+<!-- <article> -->
 <div>
   <img src="../../assets/images/flèche vers le bas.gif"  class="bas">
 </div>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="cc">
-<section class="container pt-3 mb-3">
+
+
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="cc"> -->
+<!-- <section class="container pt-3 mb-3">
     <div class="row pt-5 mt-30">
         <div class="col-lg-4 col-sm-6 mb-30 pb-5">
             <a class="c" href="#">
@@ -120,10 +117,10 @@
                     <h3 class="card-title pt-1">Front-End Development</h3>
                     <p class="card-text text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p><span class="text-sm text-uppercase font-weight-bold">Learn More&nbsp;<i class="fe-icon-arrow-right"></i></span>
                 </div>
-            </a>
-        </div>
+            </a> -->
+        <!-- </div>
 
-
+</article> -->
 
 <p class="textconnect">se connecter en tant que : </p>
 
@@ -132,10 +129,10 @@
   <div class="container">
 
     <div class="connectus">
-   <button type="button" class="box-shadow" class="access" (click)="GoToAdminLog()">   <img class="imageadmin" src="../../assets/images/onelineadmin.jpg">
-   <span> admin</span></button>
-   <button type="button" class="access"   (click)="GoToformateur()" ><img class="imageadmin" src="../../assets/images/formateuricon.jpg"><span>Formateur</span></button>
-   <button type="button" class="access" (click)="GoToParticipantLogin()"><img class="imageadmin" src="../../assets/images/part.jpg"><span>Participant</span></button>
+   <button type="button" class="box-shadow" class="access" (click)="GoToAdminLog()">   <img class="imageadmin" src="../../assets/images/aaaaaaaaaa.jpg">
+   <span> Admin</span></button>
+   <button type="button" class="access"   (click)="GoToformateur()" ><img class="imageadmin" src="../../assets/images/des.jpg"><span>Formateur</span></button>
+   <button type="button" class="access" (click)="GoToParticipantLogin()"><img class="imageadmin" src="../../assets/images/partcicpantt.jpg"><span>Participant</span></button>
 
     </div>
   </div>
@@ -143,7 +140,7 @@
 
 
 
-</div>
+<!-- </div> -->
 
 
 

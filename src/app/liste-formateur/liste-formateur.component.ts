@@ -50,13 +50,15 @@ export class ListeFormateurComponent implements OnInit {
   closeDelete() {
     $('#deleteModal').modal('hide');
   }
-
+  closeUpdate() {
+    $('#updateModal').modal('hide');
+  }
   deletec() {
     this.formateurservice
       .supprimerformateur(this.formateurtodelete.id_formateur)
       .subscribe(() => {
         $('#deleteModal').modal('hide');
-    this.loadFormateurs();
+        this.loadFormateurs();
       });
   }
 
@@ -75,19 +77,19 @@ export class ListeFormateurComponent implements OnInit {
         )
         .subscribe(() => {
           console.log('Updated');
-           this.snackBar.open('Formateur mis a jour ', 'Fermer', {
-             duration: 3000,
-           });
+          this.snackBar.open('Formateur mis a jour ', 'Fermer', {
+            duration: 3000,
+          });
           $('#updateModal').modal('hide');
-    this.loadFormateurs();
+          this.loadFormateurs();
         });
     }
   }
 
   loadFormateurs() {
-      this.formateurservice.getlisteformateur().subscribe((list: any) => {
-        this.listefor = list.formateurmap;
-      });
+    this.formateurservice.getlisteformateur().subscribe((list: any) => {
+      this.listefor = list.formateurmap;
+    });
   }
   activateFormateur(id: number) {
     this.formateurService.activateFormateur(id).subscribe(
@@ -96,8 +98,7 @@ export class ListeFormateurComponent implements OnInit {
         this.snackBar.open('Formateur activé', 'Fermer', {
           duration: 3000,
         });
-           this.loadFormateurs();
-
+        this.loadFormateurs();
       },
       (error) => {
         console.error('Error activating formateur', error);
@@ -112,8 +113,7 @@ export class ListeFormateurComponent implements OnInit {
         this.snackBar.open('Formateur deactivé', 'Fermer', {
           duration: 3000,
         });
-           this.loadFormateurs();
-
+        this.loadFormateurs();
       },
       (error) => {
         console.error('Error deactivating formateur', error);

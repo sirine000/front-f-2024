@@ -1,17 +1,20 @@
-<button class="btn btn-success mt-2  ml-2" (click)="generateCertificate()">Télécharger le Certificat</button>
-
+<div clas="head">
+<button class="btn btn-success mt-2 ml-2 " (click)="generateCertificate()">Télécharger le Certificat</button>
+</div>
 <div id="certificate" class="certificate">
   <div class="certificate-header">
-    <img src="../../assets/images/elearning.jpg" alt="Logo" class="logo"> <!-- Ajuster le chemin vers votre logo -->
+    <img class="" src="../../assets/images/EXPLORE TON POTENTIEL (5).png" alt="Logo" class="logo"> <!-- Ajuster le chemin vers votre logo -->
     <h1 class="certificate-title">Certificat de Réussite</h1>
   </div>
   <div class="certificate-body">
     <p>Nous certifions que</p>
-    <p class="certificate-name">{{ userName }}</p>
-    <p>a réussi le cours avec succès.</p>
+    <p class="certificate-name">{{ nom }} {{prenom}}</p>
+    <p>a réussi le cours de <strong> {{ cycle }}</strong> avec succès.</p>
+    <p>Date de la certification : {{ date | date:'dd/MM/yyyy' }}</p>
   </div>
   <div class="certificate-footer">
-    <div class="signature-line"></div>
-    <div class="signature-text">Signature</div>
+    <!-- <div class="signature-line"></div> -->
+    <div class="signature-text float-end">Signature</div>
   </div>
 </div>
+

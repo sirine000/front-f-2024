@@ -10,7 +10,7 @@
      <!-- <a class="navbar-brand" href="#"> -->
       <br>
       <div class="imagess">
-     <img src="../../assets/images/logo.png"  width="60" height="60" class="logo">
+     <img src="../../assets/images/EXPLORE TON POTENTIEL (5).png"  width="60" height="60" class="logo">
        <!-- </a>  -->
       </div>
 
@@ -29,31 +29,51 @@
           <div class="title">
             <button  (click)="gotodashbord()">
             <!-- <a href="#" class="link"> -->
-              <i class='bx bx-grid-alt bx-tada bx-flip-vertical' ></i>    <span>dashboard</span>
+              <i class='bx bx-grid-alt  bx-flip-vertical' ></i>    <span>dashboard</span>
 
                                           </button>
 <br><br>
-            <button (click)="ajouterFormateur()" ><i class='bx bx-book-add bx-tada' ></i><span>Ajouter un formateur</span></button>
+            <button (click)="ajouterFormateur()" ><i class='bx bx-book-add ' ></i><span>Ajouter un formateur</span></button>
             <br><br>
-            <button (click)="addcycle()"><i class='bx bx-book-add bx-tada' ></i>Ajouter un cycle</button>
+            <button (click)="addcycle()"><i class='bx bx-book-add ' ></i> <span>Ajouter un cycle</span></button>
+            <br><br>
+             <button (click)="addOffre()"><i class='bx bx-book-add' ></i> <span>Ajouter un offre d'emploi</span></button>
             <br><br>
             <button  (click)="listeformateur()" >
-                <i   class='bx bxs-group bx-tada bx-rotate-180' ></i><span>Liste des formateurs</span>
+                <i   class='bx bxs-group ' ></i><span>Liste des formateurs</span>
 
 
           </button>
           <br><br>
           <button (click)="listeparticipant()">
 
-              <i class='bx bx-group bx-tada bx-flip-horizontal' ></i>
+              <i class='bx bx-group ' ></i>
               <span>Liste de participants</span>
           </button>
           <br><br>
-    <button (click)="liste_cycle()"><i class='bx bx-book-add bx-tada' ></i>Liste des cycles</button>
-    <br><br>
-      <button (click)="goToCompte()"><i class='bx bxs-user bx-tada bx-flip-horizontal' ></i>Mon compte</button>
+            <button (click)="listeCandidats()">
+
+              <i class='bx bx-user ' ></i>
+              <span>Liste de candidats</span>
+          </button>
+           <br><br>
+            <button (click)="listeOffres()">
+
+              <i class='bx bx-book ' ></i>
+              <span>Liste de offres</span>
+          </button>
           <br><br>
-      <button class="m-1" (click)="deconnection()"><i class='bx bx-user bx-tada bx-flip-horizontal' ></i>Déconnexion</button>
+           <button (click)="demandeInscription()">
+
+             <i class='bx bx-book-content'></i>
+              <span>Demandes d'inscription</span>
+          </button>
+          <br><br>
+    <button (click)="liste_cycle()"><i class='bx bx-book-add ' ></i><span>Liste des cycles</span></button>
+    <br><br>
+      <button (click)="goToCompte()"><i class='bx bxs-user ' ></i><span>Mon compte</span></button>
+          <br><br>
+      <button (click)="deconnection()"><i class='bx bx-user' ></i><span>Déconnexion</span></button>
 
   </div>
 
@@ -61,6 +81,8 @@
   </div>
 </div>
 </section>
+
+
 
 
 

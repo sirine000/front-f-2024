@@ -1,0 +1,122 @@
+<div class="d-flex justfiy-content-center">
+    <app-header></app-header>
+
+
+<!--
+    <section class="tab"> -->
+    <!-- <article class="tab1"> -->
+      <div class="container mx-auto mt-5 formateurs">
+      <table class="table mt-5 pt-5 ">
+        <thead class="text-center ">
+          <tr class="text-center">
+            <th  scope="col">id</th>
+            <th scope="col">Nom d'offre</th>
+            <th scope="col">Description</th>
+              <th scope="col">Responsabilités du poste</th>
+                          <th scope="col">Qualifications</th>
+
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+<tr *ngFor="let item of listeOffres; let i = index">
+  <td>{{i+1}}</td>
+  <td>{{item.nomOffre}}</td>
+<td>{{item.description}}</td>
+  <td>{{item.responsabilite}}</td>
+  <td>{{item.qualifications}}</td>
+
+<td class="d-flex">
+  <!-- <button type="button"  (click)="gotoajoutercycletest(item.idFormateur)"  class="btn btn-secondary"><a >ajouter un cycle </a></button> &nbsp; &nbsp; -->
+ <button  class="btn btn-danger bx bxs-trash" (click)="confirmdelete(item)"></button>&nbsp; &nbsp;
+<button class="btn btn-success bx bxs-edit" (click)="openUpdateModal(item)"></button>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"  id="deleteModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title"><b>confirmation de suppression</b></h5>
+     <button type="button" class="bx bx-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+</div>
+  <div class="modal-body">
+    <p>vous êtes sûr de vouloir supprimer ?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"   (click)="deletec()">oui</button>
+    <button type="button" class="btn btn-danger"   (click)="closeDelete()" >non</button>
+
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateModalLabel">Mettre à jour l'offre d'emploi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeUpdate()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="forminput">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nomOffre">Nom d'offre</label>
+              <input id="nomOffre" class="form-control" type="text" formControlName="nomOffre">
+              <div *ngIf="forminput.get('nomOffre')?.invalid && (forminput.get('nomOffre')?.dirty || forminput.get('nomOffre')?.touched)">
+                <div class="alert alert-danger" *ngIf="forminput.get('nomOffre')?.errors?.['required']">
+                  Champs requis !
+                </div>
+              </div>
+            </div>
+
+              <div class="form-group col-md-6">
+              <label for="description">Description</label>
+              <input id="description" class="form-control" type="text" formControlName="description">
+              <div *ngIf="forminput.get('description')?.invalid && (forminput.get('description')?.dirty || forminput.get('description')?.touched)">
+                <div class="alert alert-danger" *ngIf="forminput.get('description')?.errors?.['required']">
+                  Champs requis !
+                </div>
+              </div>
+            </div>
+              <div class="form-group col-md-6">
+              <label for="responsabilite">Responsabilités du poste</label>
+              <input id="responsabilite" class="form-control" type="text" formControlName="responsabilite">
+              <div *ngIf="forminput.get('responsabilite')?.invalid && (forminput.get('responsabilite')?.dirty || forminput.get('responsabilite')?.touched)">
+                <div class="alert alert-danger" *ngIf="forminput.get('responsabilite')?.errors?.['required']">
+                  Champs requis !
+                </div>
+              </div>
+            </div>
+              <div class="form-group col-md-6">
+              <label for="qualifications">Qualifications</label>
+              <input id="qualifications" class="form-control" type="text" formControlName="qualifications">
+              <div *ngIf="forminput.get('qualifications')?.invalid && (forminput.get('qualifications')?.dirty || forminput.get('qualifications')?.touched)">
+                <div class="alert alert-danger" *ngIf="forminput.get('qualifications')?.errors?.['required']">
+                  Champs requis !
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeUpdate()">Annuler</button>
+        <button type="button" class="btn btn-primary" (click)="updateOffre()">Mettre à jour</button>
+      </div>
+    </div>
+  </div>
+</div>

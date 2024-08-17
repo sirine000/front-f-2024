@@ -3,6 +3,8 @@
 <div class="container">
   <div class="card">
     <form (ngSubmit)="addParticipant()" #participantForm="ngForm">
+
+      <img src="././../../assets/images/bb937d07baf2901499ba0c0816134756.jpg" class="smile">
       <div class="inputBox m-2">
         <input type="text" [(ngModel)]="participant.nom" name="nom" required>
         <span class="user">Nom</span>
@@ -25,6 +27,8 @@
         <span>Confirmer le mot de passe</span>
       </div>
       <button class="enter m-2" type="submit" [disabled]="!participantForm.form.valid || !passwordsMatch">Ajouter</button>
+            <button class="home m-2" type="button" (click)="goToHome()">Accueil</button>
+
       <div *ngIf="!passwordsMatch && participantForm.submitted">
         <p class="error-message">Les mots de passe ne correspondent pas.</p>
       </div>

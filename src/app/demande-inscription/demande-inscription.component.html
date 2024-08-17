@@ -1,0 +1,61 @@
+<div class="d-flex justfiy-content-center">
+    <app-header></app-header>
+
+<!--
+    <section class="tab"> -->
+    <!-- <article class="tab1"> -->
+      <div class="container mx-auto mt-5 formateurs">
+      <table class="table mt-5 pt-5 ">
+        <thead class="text-center ">
+          <tr class="text-center">
+            <th  scope="col">id</th>
+            <th scope="col">Nom et prénom</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Bon de commande</th>
+         <th scope="col">Vérification</th>
+         <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+<tr *ngFor="let item of listefor">
+  <td>{{item.id}}</td>
+  <td>{{item.nomPrenom}}</td>
+  <td>{{item.telephone}}</td>
+<td>{{item.email}}</td>
+<td>
+   <div *ngIf="item.bonDeCommande">
+              <!-- Display the image from the backend URL -->
+              <img [src]="'data:image/jpeg;base64,  '+item.bonDeCommande" alt="Bon de commande"     class="img-thumbnail"
+                style="max-width: 200px; cursor: pointer;max-height:100px;"
+                (click)="openModal(item.bonDeCommande)" />
+            </div></td>
+
+<td>{{ item.verifier ? 'Vérifié' : 'Pas encore vérifié' }}</td>
+<td>
+  <button class="btn btn-primary" (click)="verifierCommande(item.id)" [disabled]="item.verifier">Vérifier</button>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- Modal for displaying the image -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal"> <!-- Add a custom class here -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Bon de commande</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img [src]="selectedImageUrl" alt="Bon de commande" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>

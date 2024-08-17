@@ -1,0 +1,84 @@
+<!-- formateur.component.html -->
+<div class="d-inline">
+    <app-user></app-user>
+  <div class="container">
+    <div class="container position-relative" style="top:-110vh;">
+      <div class="main-body">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="main-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Participant</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Profil participant</li>
+          </ol>
+        </nav>
+        <!-- /Breadcrumb -->
+
+        <div class="row gutters-sm">
+          <div class="col-md-5 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+  <div (click)="fileInput.click()" style="cursor: pointer;">
+    <img [src]="imgSrc ? imgSrc : '../../../assets/image/formateur.png'" alt="Formateur" class="rounded-circle" width="200">
+  </div>
+         <div class="mt-3">
+                    <p class="text-secondary mb-1">Participant</p>
+                     <h4><strong>{{participantForm.value.nom }} {{participantForm.value.prenom }}</strong></h4>
+                    <h4><strong>{{ participantForm.value.email }}</strong></h4> &nbsp;
+                     <button class="btn btn-outline-primary" (click)="uploadPhoto()">Enregistrer la Photo</button>
+                     <!-- <button class="btn btn-outline-primary">Enregistrer la Photo</button> -->
+
+                     <input #fileInput type="file" (change)="onFileSelected($event)" style="display: none;">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="card mb-3 pb-5">
+              <div class="card-body">
+                <form [formGroup]="participantForm" (ngSubmit)="updateParticipant()" >
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-1">Nom </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" formControlName="nom" class="form-control">
+                    </div>
+                  </div>
+                  <hr>
+                      <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-1">Prenom </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" formControlName="prenom" class="form-control">
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-1">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="email" formControlName="email" class="form-control">
+                    </div>
+                  </div>
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-secondary" class="up">Modifer</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

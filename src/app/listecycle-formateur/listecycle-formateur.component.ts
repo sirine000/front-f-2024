@@ -20,51 +20,69 @@ export class ListecycleFormateurComponent implements OnInit {
   password!:String;
   nomEtprenom!:String;
 
-  cycles: CycleEntity[] = [];
+  cycles: any[] = [];
   idFormateur: number | undefined;
   formateurConnecte: Formateur | undefined;
 
 
   ngOnInit(): void {
-    console.log('Début ngOnInit');
-  
-    const formateurData = localStorage.getItem('formateur.idFormateur');
-    console.log('formateurData :', formateurData);
-  
-    if (formateurData) {
-      this.idFormateur = Number(formateurData); // Convertit la chaîne en nombre
-      console.log('ID du formateur récupéré :', this.idFormateur);
-      this.loadCycles(this.idFormateur);
-    } else {
-      console.error('ID du formateur non trouvé dans localStorage.');
-      // Gérer le cas où l'ID du formateur n'est pas trouvé
-    }
-  
+    // console.log('Début ngOnInit');
+
+   const formateurData = localStorage.getItem('formateur');
+   console.log('formateurData:', formateurData);
+
+   if (formateurData) {
+     try {
+       // Parse the JSON string to an object
+       const formateur = JSON.parse(formateurData);
+       console.log('Formateur data:', formateur);
+
+       // Check if the parsed data has the 'id_formateur' property
+       if (formateur && formateur.id_formateur) {
+         this.idFormateur = formateur.id_formateur;
+         this.formateurConnecte = formateur;
+
+         console.log('ID du formateur récupéré :', this.idFormateur);
+         this.loadCycles(this.idFormateur);
+       } else {
+         console.error('ID du formateur non trouvé dans les données parsées.');
+         // Gérer le cas où l'ID du formateur n'est pas trouvé dans les données parsées
+       }
+     } catch (e) {
+       console.error('Erreur lors de la parsing des données du formateur:', e);
+       // Gérer le cas où le JSON est invalide ou la parsing échoue
+     }
+   } else {
+     console.error('Aucune donnée de formateur trouvée dans localStorage.');
+     // Gérer le cas où aucune donnée de formateur n'est trouvée
+   }
+
     console.log('Fin ngOnInit');
   }
 ch:string="";
-loadCycles(idFormateur: number): void {
-  this.formateurService.getCyclesForFormateur(idFormateur)
-    .subscribe(
-      cycles => {
-        if (cycles && cycles.length > 0) {
-          this.cycles = cycles;
-          console.log('Cycles récupérés avec succès', cycles);
-        } else {
-          this.ch = "Aucun cycle pour vous !";
-        }
-      },
-      error => {
-        console.error('Erreur lors de la récupération des cycles', error);
-        if (error.status === 404) {
-          console.error('Formateur non trouvé ou cycles non disponibles pour cet ID.');
-          this.ch = "Formateur non trouvé ou cycles non disponibles pour cet ID.";
-        } else {
-          // Autre gestion d'erreur générique
-          this.ch = "Une erreur est survenue lors de la récupération des cycles.";
-        }
+loadCycles(idFormateur: any): void {
+  this.cycleServiceService.getCyclesForFormateur(idFormateur).subscribe(
+    (cycles) => {
+      if (cycles && cycles.length > 0) {
+        this.cycles = cycles;
+        console.log('Cycles récupérés avec succès', cycles);
+      } else {
+        this.ch = 'Aucun cycle pour vous !';
       }
-    );
+    },
+    (error) => {
+      console.error('Erreur lors de la récupération des cycles', error);
+      if (error.status === 404) {
+        console.error(
+          'Formateur non trouvé ou cycles non disponibles pour cet ID.'
+        );
+        this.ch = 'Formateur non trouvé ou cycles non disponibles pour cet ID.';
+      } else {
+        // Autre gestion d'erreur générique
+        this.ch = 'Une erreur est survenue lors de la récupération des cycles.';
+      }
+    }
+  );
 }
 }
 /*
@@ -169,7 +187,7 @@ loadCycles(idFormateur: number): void {
 
 
   // const idFormateur = this.formateurService.getbyidformateur(this.idFormateur); // Obtenez l'ID du formateur connecté depuis le service d'authentification
-  
+
 
     // const formateurdata =localStorage.getItem("formateur.idFormateur")
     // if(formateurdata!=null){

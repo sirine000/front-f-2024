@@ -1,0 +1,148 @@
+<app-user></app-user>
+
+<div class="container  d-flex pl-5">
+
+  <div class="row col-12">
+
+  <div class="card m-4" *ngFor="let cycle of listecycle">
+    <div class="header">
+      <p>Nom de cycle : {{ cycle.nom_cycle_de_formation }}</p>
+    </div>
+    <div class="info">
+      <p class="title">Description</p>
+      <p>{{ cycle.description }}</p>
+
+      <p class="title">Prix</p>
+      <p>{{ cycle.prix }} dt</p>
+
+      <p class="title">Date Début</p>
+      <p>{{ cycle.dateDebut }}</p>
+
+      <p class="title">Date fin</p>
+      <p>{{ cycle.dateFin }}</p>
+    </div>
+    <div class="footer">
+      <p class="tag"></p>
+      <button
+        class="action"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#inscriptionModal"
+        data-bs-whatever="@mdo"
+      >
+        S'inscrire
+      </button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="inscriptionModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-header head text-white rounded-top">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Veuillez remplir le formulaire
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeInscrit()"
+        ></button>
+      </div>
+              <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+      <div class="modal-body bg-light p-4">
+          <div class="mb-3">
+            <label for="cycle-select" class="form-label fw-bold ">Nom de Cycle</label>
+            <select
+              class="form-select form-control h-auto"
+              id="cycle-select"
+              formControlName="cycleId">
+              <option *ngFor="let cycle of listecycle" [value]="cycle.id">
+                {{ cycle.nom_cycle_de_formation }}
+              </option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="fullName" class="form-label fw-bold">Nom et Prénom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullName"
+              formControlName="nomPrenom"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label fw-bold">Téléphone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              formControlName="telephone"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="adresse" class="form-label fw-bold">Adresse</label>
+            <input
+              type="text"
+              class="form-control"
+              id="adresse"
+              formControlName="adresse"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="bonDeCommande" class="form-label fw-bold">Le bon de commande</label>
+            <input
+              type="file"
+              class="form-control h-auto"
+              id="bonDeCommande"
+              (change)="onFileChange($event)"
+              required
+            />
+          </div>
+
+      </div>
+      <div class="modal-footer bg-light">
+                  <button type="submit" class="btn submitBtn text-white ">Envoyer</button>
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="closeInscrit()"
+        >
+          Fermer
+        </button>
+      </div>
+              </form>
+
+    </div>
+  </div>
+</div>

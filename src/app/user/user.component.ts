@@ -1,22 +1,46 @@
 import { Component } from '@angular/core';
-declare var $:any ; 
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+declare var $: any;
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-// name="sirine" ;
-// location="tunisia";
+  constructor(private router: Router) {}
+  // name="sirine" ;
+  // location="tunisia";
 
-// getlocation(){
-//   return this.location; 
-// }
-//  getmessage(){
-//   console.log("welcome");
-//  }
+  // getlocation(){
+  //   return this.location;
+  // }
+  //  getmessage(){
+  //   console.log("welcome");
+  //  }
 
-// confirmdelete(){
-// $('#deletemodal').modal("show" );
-// }
+  // confirmdelete(){
+  // $('#deletemodal').modal("show" );
+  // }
+
+  cycleparticipant() {
+    this.router.navigate(['cycleparticipant']);
+  }
+
+  coursparticipant() {
+    this.router.navigate(['coursParticipant']);
+  }
+
+ certificats() {
+ this.router.navigate(['list-certificat']);
+
+  }
+
+  comptee() {
+    this.router.navigate(['compteParticipant']);
+  }
+  deconnecter() {
+    localStorage.removeItem('user');
+
+    this.router.navigate(['home']);
+  }
 }

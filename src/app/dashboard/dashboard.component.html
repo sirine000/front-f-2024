@@ -1,57 +1,63 @@
+
+
 <div class="d-flex justfiy-content-between ">
     <app-header class="justfiy-content-start mr-5"></app-header>
 
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
     <div class="test mt-2 mr-5 pr-5">
+        <img src="./../../assets/images/dashboard.gif" class="imgg"><br>
+
 <div class="row contain ml-5">
     <div class="row ml-5 col-12">
         <div class="col-3 col-sm-3">
             <div class="card-box bg-blue">
                 <div class="inner">
-                    <h3> 13436 </h3>
-                    <p> Student Strength </p>
+                    <h3> {{nbFormateur}} </h3>
+                    <p> Nombre de formateur </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                 </div>
-                <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                <!-- <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a> -->
             </div>
         </div>
 
         <div class="col-3 col-sm-3">
             <div class="card-box bg-green">
                 <div class="inner">
-                    <h3> ₹185358 </h3>
-                    <p> Today’s Collection </p>
+                    <h3> {{nbParticipant}} </h3>
+                    <p> Nombre de partcicpant </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-money" aria-hidden="true"></i>
                 </div>
-                <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                <!-- <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a> -->
             </div>
         </div>
         <div class="col-3 col-sm-3">
             <div class="card-box bg-orange">
                 <div class="inner">
-                    <h3> 5464 </h3>
-                    <p> New Admissions </p>
+                    <h3> {{nbCycle}} </h3>
+                    <p> Nombre des cycles </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                 </div>
-                <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                <!-- <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a> -->
             </div>
         </div>
         <div class="col-3 col-sm-3">
             <div class="card-box bg-red">
                 <div class="inner">
-                    <h3> 723 </h3>
-                    <p> Faculty Strength </p>
+                    <h3> {{nbCommande}} </h3>
+                    <p> Commandes </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-users"></i>
                 </div>
-                <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                <!-- <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a> -->
             </div>
         </div>
     </div>

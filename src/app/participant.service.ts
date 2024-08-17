@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Participant } from 'src/models/participant';
@@ -29,7 +29,26 @@ export class ParticipantService {
       participant
     );
   }
+  uploadPhoto(participantId: number, file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
 
+    return this.http.post(
+      `${this.apiUrl}uploadPhoto/${participantId}`,
+      formData,
+      {
+        headers: new HttpHeaders({
+          enctype: 'multipart/form-data',
+        }),
+        responseType: 'text',
+      }
+    );
+  }
+  getbyidparticipant(idParticipant: number): Observable<any> {
+    return this.http.get<any>(
+      this.apiUrl + 'userid/' + idParticipant
+    );
+  }
   supprimerparticipant(idParticipant: any) {
     return this.http.delete<Participant>(this.apiUrl + 'del/' + idParticipant);
   }

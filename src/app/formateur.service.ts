@@ -70,10 +70,10 @@ export class FormateurService {
   // getcycledeformateur(idFormateur: number): Observable<CycleEntity[]>{
   //   return this.httpclient.get<CycleEntity[]>(this.apiurlf+"formateurscyles/"+this.idFormateur)
   // }
-  getCyclesForFormateur(idFormateur: number): Observable<CycleEntity[]> {
-    const url = `${this.apiurlf}formateurscycles/${idFormateur}`; // Utilisation de l'ID dans l'URL
-    return this.httpclient.get<CycleEntity[]>(url);
-  }
+  // getCyclesForFormateur(idFormateur: number): Observable<CycleEntity[]> {
+  //   const url = `${this.apiurlf}formateurscycles/${idFormateur}`; // Utilisation de l'ID dans l'URL
+  //   return this.httpclient.get<any[]>(url);
+  // }
   uploadPhoto(formateurId: number, file: File): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('file', file);
@@ -103,5 +103,11 @@ export class FormateurService {
   deactivateFormateur(id: number): Observable<Formateur> {
     const deactivateUrl = `${this.apiurlf}deactivateFormateur/${id}`;
     return this.httpclient.put<Formateur>(deactivateUrl, {});
+  }
+
+  getCoursByFormateur(formateurId: number): Observable<any[]> {
+    return this.httpclient.get<any[]>(
+      `${this.apiurlf}coursbyFormateur/${formateurId}`
+    );
   }
 }

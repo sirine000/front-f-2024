@@ -15,7 +15,8 @@
     /* box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px; */
     /* margin: 20px; */
   min-height: 30%;
-  margin-top: -35%;
+  margin-top: -41%;
+  margin-bottom: 5%;
   margin-left: 30%;
   /* background: #e0e0e0; */
   box-shadow:  30px 30px 100px #d5d5d5,
@@ -24,18 +25,18 @@
                /* background: transparent; */
   }
 
-  
+
   .heading {
     text-align: center;
     font-weight: 900;
     font-size: 30px;
     color: rgb(16, 137, 211);
   }
-  
+
   .form {
     margin-top: 20px;
   }
-  
+
   .form .input {
     width: 100%;
     background: white;
@@ -57,28 +58,28 @@
     color: rgb(170, 170, 170);
 
   }
-  
+
   .form .input::placeholder {
     color: rgb(170, 170, 170);
   }
-  
+
   .form .input:focus {
     outline: none;
     border-inline: 2px solid #12B1D1;
   }
-  
+
   .form .forgot-password {
     display: block;
     margin-top: 10px;
     margin-left: 10px;
   }
-  
+
   .form .forgot-password a {
     font-size: 11px;
     color: #0099ff;
     text-decoration: none;
   }
-  
+
   .form .login-button {
     display: block;
     width: 100%;
@@ -95,28 +96,28 @@
     font-size: 25px;
     font-family:  cursive;
   }
-  
+
   .form .login-button:hover {
     transform: scale(1.03);
     box-shadow: rgba(111, 111, 111, 0.878) 0px 23px 10px -20px;
   }
-  
+
   .form .login-button:active {
     transform: scale(0.95);
     box-shadow: rgba(255, 255, 255, 0.878) 0px 15px 10px -10px;
   }
-  
+
   .social-account-container {
     margin-top: 25px;
   }
-  
+
   .social-account-container .title {
     display: block;
     text-align: center;
     font-size: 10px;
     color: rgb(170, 170, 170);
   }
-  
+
   .social-account-container .social-accounts {
     width: 100%;
     display: flex;
@@ -124,7 +125,7 @@
     gap: 15px;
     margin-top: 5px;
   }
-  
+
   .social-account-container .social-accounts .social-button {
     background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
     border: 5px solid white;
@@ -137,26 +138,26 @@
     box-shadow: rgba(231, 231, 231, 0.878) 0px 12px 10px -8px;
     transition: all 0.2s ease-in-out;
   }
-  
+
   .social-account-container .social-accounts .social-button .svg {
     fill: white;
     margin: auto;
   }
-  
+
   .social-account-container .social-accounts .social-button:hover {
     transform: scale(1.2);
   }
-  
+
   .social-account-container .social-accounts .social-button:active {
     transform: scale(0.9);
   }
-  
+
   .agreement {
     display: block;
     text-align: center;
     margin-top: 15px;
   }
-  
+
   .agreement a {
     text-decoration: none;
     color: #ffffff;
@@ -171,11 +172,11 @@
     /* font-size: 20px;
     margin-left: -7%;
     margin-top: 2%; */
-   
+
     font-size: 30px;
     font-family: 'Brush Script MT', cursive;
     }
-    
+
     .alert-danger{
       text-align: center;
       font-size: 15px;
@@ -185,18 +186,18 @@
       /* border-radius: 20px;
       height: 50px;
       margin-top: 10px;
-    
+
       /* font-family: 'Brush Script MT', cursive; */
       /* font-size: 10px;
-      margin-left: -7%; */ 
+      margin-left: -7%; */
 
     }
 
     .image{
      margin-left: 100px;
       border-radius: 20px;
-    
-   
+
+
     }
 
     .formm {
@@ -212,22 +213,22 @@
       max-width: 700px;
       align-items: center;
     }
-    
+
     .form-title {
       color: #848383;
       font-size: 35px;
       /* font-weight: 500; */
       font-family: 'Brush Script MT', cursive;
     }
-    
+
     .form-paragraph {
       margin-top: 10px;
       font-size: 0.9375rem;
       color: rgba(195, 179, 123, 0.304);
     }
-    
+
     .drop-container {
-      
+
       background-color: #c7b5854b;
       position: relative;
       display: flex;
@@ -243,16 +244,16 @@
       cursor: pointer;
       transition: background .2s ease-in-out, border .2s ease-in-out;
     }
-    
+
     .drop-container:hover {
       background: rgba(223, 223, 223, 0.164);
       border-color: rgba(17, 17, 17, 0.616);
     }
-    
+
     .drop-container:hover .drop-title {
       color: #222;
     }
-    
+
     .drop-title {
       color: #444;
       font-size: 20px;
@@ -260,7 +261,7 @@
       text-align: center;
       transition: color .2s ease-in-out;
     }
-    
+
     #file-input {
       width: 500px;
       max-width: 600%;
@@ -285,7 +286,7 @@
       cursor: pointer;
       transition: background .2s ease-in-out;
     }
-    
+
     #file-input::file-selector-button:hover {
       background: #0d45a5;
     }
@@ -302,7 +303,7 @@
     }
     .file-upload-label input {
       display: none;
-     
+
     }
     .file-upload-label svg {
       height: 50px;

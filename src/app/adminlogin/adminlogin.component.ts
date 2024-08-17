@@ -41,7 +41,10 @@ export class AdminloginComponent {
       }
     );
   }
+  goToHome() {
+      this.router.navigate(['./home']);
 
+}
   gotoAdmin() {
     this.router.navigate(['./header']);
   }

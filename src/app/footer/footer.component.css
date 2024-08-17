@@ -1,4 +1,4 @@
-body{margin-top:20px;}
+body{margin-top:50px;}
 .footer {
     background:#f2e1bf6e;
 	padding-bottom: 50px;
@@ -30,7 +30,7 @@ padding: 0
 .footer_profile ul li{
 display: inline-block;
 }
-@media only screen and (max-width:480px) { 
+@media only screen and (max-width:480px) {
 .footer_profile ul li{margin:2px;}
 }
 .footer_profile ul li a img{width:60px;}

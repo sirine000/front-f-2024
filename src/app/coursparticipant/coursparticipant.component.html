@@ -1,0 +1,82 @@
+<app-user></app-user>
+
+<div class="container mt-4" style="position:relative;top:-91vh;left:8vh;">
+  <div class="row">
+    <div class="container"  *ngFor="let cycle of validCycles" class="col-md-4">
+<div class="card">
+<div class="header">
+
+  <p> Nom de cycle : {{ cycle.nom_cycle_de_formation }}</p>
+</div>
+<div class="info">
+   <p><strong>Formateur:</strong> {{ cycle.formateur.nomEtPrenom }}</p>
+
+   <p><strong>Description:</strong> {{ cycle.description }}</p>
+   <button
+            class="btn "
+            (click)="handleCourseClick(cycle.id)"
+          >
+            Voir les cours
+          </button>
+
+</div>
+<div class="footer">
+  <p class="tag"></p>
+
+</div>
+</div>
+</div>
+</div>
+
+    <!-- <div *ngFor="let cycle of validCycles" class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>{{ cycle.cycleName }}</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Description:</strong> {{ cycle.description }}</p>
+          <button
+            class="btn btn-primary"
+            (click)="handleCourseClick(cycle.id)"
+          >
+            Voir les cours
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Display selected courses -->
+  <div *ngIf="selectedCourses.length > 0" class="mt-5">
+    <h3>Cours pour le cycle sélectionné :</h3>
+  <table class="table table-striped border border-1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom du Cours</th>
+        <th>Description</th>
+        <th>Fichiers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of selectedCourses">
+        <td>{{ course.id }}</td>
+        <td>{{ course.nomCours }}</td>
+        <td>{{ course.description }}</td>
+        <td>
+          <!-- Display list of files -->
+         <ul style="list-style-type: none; padding:0; ">
+  <li *ngFor="let filePath of course.fileContents; let i = index">
+    <button (click)="openPdf(filePath)" class="btn btn-primary mb-1">
+      <i class="bx bx-file"></i> Voir cours {{ i + 1 }}
+    </button>
+  </li>
+</ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+

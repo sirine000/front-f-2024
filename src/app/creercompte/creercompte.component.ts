@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ParticipantService } from '../participant.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -22,7 +22,7 @@ export class CREERCompteComponent {
   constructor(
     private participantService: ParticipantService,
     private route: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
   ) {}
 
   addParticipant(): void {
@@ -44,12 +44,15 @@ export class CREERCompteComponent {
         // Optionally, reset the form or navigate to another page
       },
       (error: any) => {
-        
+
             this.snackBar.open(error.error, 'Fermer', {
               duration: 3000,
             });
          console.log(error)
       }
     );
+  }
+  goToHome() {
+        this.route.navigate(['home']);
   }
 }

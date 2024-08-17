@@ -51,7 +51,9 @@ export class ListeparticipantComponent {
   closeDelete() {
     $('#deleteModal').modal('hide');
   }
-
+  closeUpdate() {
+   $('#updateModal').modal('hide');
+}
   deletec() {
     this.participantservice
       .supprimerparticipant(this.participanttodelete.id)

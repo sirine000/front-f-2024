@@ -1,18 +1,15 @@
 
-
 <app-formateur-menu></app-formateur-menu>
 
 
-<div *ngIf="formateurConnecte">
-   <h2>Cycles de formation pour <br>{{ formateurConnecte.nomEtPrenom }}</h2>
- </div>
 
-<section class="card-area pb-5">
+<section class="pb-5">
+
     <div class="container">
 
+       <div class="row justify-content-center" style="position: relative;top:-3.5vh;">
 
-       <div class="row justify-content-center">
-       //  <div class="col-lg-4 col-md-7 col-sm-9" *ngFor="let liste of cycles">
+        <div class="col-lg-4 col-md-7 col-sm-9" *ngFor="let liste of cycles">
             <div class="single-card card-style-one">
                <div class="card-image">
                   <!-- <img src="./../../assets/images/java.jpg" alt="Image" /> -->
@@ -30,8 +27,8 @@
                 <div class="card-content">
                    <h4 class="card-title">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <p class="idd"><strong>ID : {{liste.idCycle}}</strong> </p>
-                    <p> <strong>Nom de cycle :</strong>{{liste.nomCycleDeFormation}}</p>
+                    <p class="idd"><strong>ID : {{liste.id}}</strong> </p>
+                    <p> <strong>Nom de cycle : </strong>{{liste.nom_cycle_de_formation}}</p>
                    </h4>
                    <p class="text"><strong>Description :</strong>
                     {{liste.description}}                 </p>
@@ -39,16 +36,16 @@
                   <p><strong>Date Début :</strong> {{liste.dateDebut}}</p>
                    <p><strong>Date Fin :</strong> {{liste.dateFin}}</p>
                    <br>
-                   <div class="container" class="con">
+                   <!-- <div class="container" class="con">
                      <p><strong>Nom de cours :</strong></p>
                     <p ><strong>Les cours ajoutés :</strong> {{liste.formateurs.nomEtPrenom}}</p>
-                   </div>
+                   </div> -->
                    <!-- <p ><strong>Formateur :</strong>{{onOptionSelected(nom_prof)}}</p> -->
                    &nbsp;&nbsp;&nbsp;
                    <!-- <button class="button"><a href="modifierCycle">modifier</a> </button> &nbsp;  <button  class="button" (click)="supprimercycle(liste.id)">supprimer</button> -->
-                   <button class="button" ><a  (click)="ajoutercours(liste.idCycle)">Ajouter un cours</a> </button> &nbsp;
+                   <button class="button" (click)="ajoutercours(liste.id)">Ajouter un cours</button> &nbsp;
 
-                   <button  class="button" ><a>Modifier un cours</a></button>
+                   <button  class="button" >Modifier un cours</button>
 
                 </div>
              </div>
@@ -63,7 +60,7 @@
 
 
 
-
+</div></div></section>
 
 
 

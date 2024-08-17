@@ -1,8 +1,8 @@
 <div class="d-flex justfiy-content-between ">
 
 <app-header class="justfiy-content-start mr-5"></app-header>
-
-<div class="container position-relative" style="top:17vh;">
+<div class="container">
+<div class="container position-relative" style="top:19vh;">
     <div class="main-body">
       <!-- Breadcrumb -->
       <nav aria-label="breadcrumb" class="main-breadcrumb">
@@ -22,9 +22,9 @@
                 <img src="../../assets/images/admin2.jpg" alt="Admin" class="rounded-circle" width="150">
                 <div class="mt-3">
                   <p class="text-secondary mb-1">Admin</p>
-                   <h4>{{ adminForm.value.nomEtPrenom }}</h4>
-                  <p class="text-muted font-size-sm">{{ adminForm.value.email }}</p>
-                  <button class="btn btn-outline-primary">Message</button>
+                   <h4><strong>{{ adminForm.value.nomEtPrenom }}</strong></h4>
+                  <h4><strong>{{ adminForm.value.email }}</strong></h4>
+                  <button class="btn btn-outline-primary">Enregistrer l'image</button>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-12">
-                    <button type="submit" class="btn btn-info">Update</button>
+                    <button type="submit" class="btn btn-info" class="up">Modifier</button>
                   </div>
                 </div>
               </form>
@@ -73,4 +73,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -30,13 +30,13 @@
 <td>{{item.email}}</td>
   <td>{{item.active}}</td>
 <td>
-  <button class="btn btn-success mb-1" (click)="activateFormateur(item.id_formateur)">Activer</button>
+  <button class="btn btn-success mb-1" (click)="activateFormateur(item.id_formateur)">Activer</button> &nbsp;
   <button class="btn btn-danger"(click)="deactivateFormateur(item.id_formateur)">Désactiver</button>
 
 </td>
 <td class="d-flex">
   <!-- <button type="button"  (click)="gotoajoutercycletest(item.idFormateur)"  class="btn btn-secondary"><a >ajouter un cycle </a></button> &nbsp; &nbsp; -->
- <button  class="btn btn-danger bx bxs-trash" (click)="confirmdelete(item)"></button>&nbsp;
+ <button  class="btn btn-danger bx bxs-trash" (click)="confirmdelete(item)"></button>&nbsp; &nbsp;
 <button class="btn btn-success bx bxs-edit" (click)="openUpdateModal(item)"></button>
 
 </td>
@@ -132,7 +132,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="updateModalLabel">Mettre à jour le formateur</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeUpdate()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -204,7 +204,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeUpdate()">Annuler</button>
         <button type="button" class="btn btn-primary" (click)="updateFormateur()">Mettre à jour</button>
       </div>
     </div>

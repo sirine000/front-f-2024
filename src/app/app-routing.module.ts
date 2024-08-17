@@ -25,6 +25,16 @@ import { CertificatComponent } from './certificat/certificat.component';
 import { CompteAdminComponent } from './compte-admin/compte-admin.component';
 import { AdminGuard } from './adminauth.guard';
 import { FormateurAuthGuard } from './formateur-auth.guard';
+import { ListCoursFormateurComponent } from './list-cours-formateur/list-cours-formateur.component';
+import { OffreemploiComponent } from './offreemploi/offreemploi.component';
+import { CompteparticipantComponent } from './compteparticipant/compteparticipant.component';
+import { CycleparticipantComponent } from './cycleparticipant/cycleparticipant.component';
+import { CoursparticipantComponent } from './coursparticipant/coursparticipant.component';
+import { DemandeInscriptionComponent } from './demande-inscription/demande-inscription.component';
+import { ListeCandidatsComponent } from './liste-candidats/liste-candidats.component';
+import { ListCertificatComponent } from './list-certificat/list-certificat.component';
+import { AjouteroffreComponent } from './ajouteroffre/ajouteroffre.component';
+import { ListeoffresComponent } from './listeoffres/listeoffres.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -39,6 +49,12 @@ const routes: Routes = [
     component: AddCycleComponent,
     canActivate: [FormateurAuthGuard],
   },
+  {
+    path: 'ajouterCycle',
+    component: AddCycleComponent,
+    canActivate: [AdminGuard],
+  },
+
   // {path:"ajoutercycle/:id_formateur" , component:AddCycleComponent},
   { path: 'home', component: HomeComponent },
   { path: 'homeheader', component: HomeHeaderComponent },
@@ -56,6 +72,7 @@ const routes: Routes = [
     component: ListeCycleComponent,
     canActivate: [AdminGuard],
   },
+
   {
     path: 'formateurMenu',
     component: FormateurMenuComponent,
@@ -69,7 +86,13 @@ const routes: Routes = [
   {
     path: 'inserercyclecours/:idCycle',
     component: AjoutercoursComponent,
-    canActivate: [AdminGuard],
+    canActivate: [FormateurAuthGuard],
+  },
+  { path: 'offreemploi', component: OffreemploiComponent },
+  {
+    path: 'listcoursformateur',
+    component: ListCoursFormateurComponent,
+    canActivate: [FormateurAuthGuard],
   },
   //{path:"getcycleetformateur/:idFormateur",component:AjoutercycletestComponent}
   {
@@ -87,8 +110,36 @@ const routes: Routes = [
     component: CompteAdminComponent,
     canActivate: [AdminGuard],
   },
+  {
+    path: 'liste-candidats',
+    component: ListeCandidatsComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'demande-inscription',
+    component: DemandeInscriptionComponent,
+    canActivate: [AdminGuard],
+  },
 
-  { path: 'certificat', component: CertificatComponent },
+  { path: 'list-certificat', component: ListCertificatComponent },
+  {
+    path: 'certificat/:nom/:prenom/:cycle/:date',
+    component: CertificatComponent,
+  },
+  { path: 'cycleparticipant', component: CycleparticipantComponent },
+
+  { path: 'coursParticipant', component: CoursparticipantComponent },
+  { path: 'compteParticipant', component: CompteparticipantComponent },
+  {
+    path: 'ajouterOffre',
+    component: AjouteroffreComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'listOffres',
+    component: ListeoffresComponent,
+    canActivate: [AdminGuard],
+  },
 ];
 
 @NgModule({
