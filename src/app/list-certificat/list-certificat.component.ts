@@ -27,9 +27,15 @@ export class ListCertificatComponent implements OnInit {
     console.log(this.userEmail);
     this.commandService.loadValidCours(this.userEmail).subscribe({
       next: (cycles) => {
-        this.validCycles = cycles;
+        const currentDate = new Date();
+
+        this.validCycles = cycles.filter((cycle: any) => {
+          const cycleEndDate = new Date(cycle.dateFin);
+          return cycleEndDate <= currentDate;
+        });
+
         this.displayCourses = this.validCycles.length > 0;
-        console.log(cycles);
+        console.log(this.validCycles);
       },
       error: (err) => {
         console.error('Error loading courses:', err);
@@ -37,11 +43,16 @@ export class ListCertificatComponent implements OnInit {
     });
   }
 
-  openCertif(nom: string,prenom:String, cycle: string, date: String) {
-  if (!nom || !cycle || !date) {
-    console.error('One of the parameters is undefined:', { nom, cycle, date });
-    return;
-  }
+  openCertif(nom: string, prenom: String, cycle: string, date: String) {
+    if (!nom || !cycle || !date) {
+      console.error('One of the parameters is undefined:', {
+        nom,
+        cycle,
+        date,
+      });
+      return;
+    }
 
-  this.router.navigate(['certificat', nom,prenom, cycle, date.toString()]);  }
+    this.router.navigate(['certificat', nom, prenom, cycle, date.toString()]);
+  }
 }
