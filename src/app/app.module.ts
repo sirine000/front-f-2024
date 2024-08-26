@@ -48,6 +48,8 @@ import { AjouteroffreComponent } from './ajouteroffre/ajouteroffre.component';
 import { ListeoffresComponent } from './listeoffres/listeoffres.component';
 import { AccueilformateurComponent } from './accueilformateur/accueilformateur.component';
 import { AccparticipantComponent } from './accparticipant/accparticipant.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,8 @@ import { AccparticipantComponent } from './accparticipant/accparticipant.compone
     ListeoffresComponent,
     AccueilformateurComponent,
     AccparticipantComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

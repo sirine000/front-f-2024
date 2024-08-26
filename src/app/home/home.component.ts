@@ -19,8 +19,8 @@ export class HomeComponent {
     private snackBar: MatSnackBar
   ) {
     this.loginForm = this.fb.group({
-      email: ['',[Validators.required, Validators.email]],
-      password: ['',[Validators.required,Validators.minLength(8)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -31,7 +31,9 @@ export class HomeComponent {
   GoToAdminLog() {
     this.router.navigate(['./adminlogin']);
   }
-
+  forgotPassword() {
+    this.router.navigate(['./forgot-password']);
+  }
   GoToformateur() {
     this.router.navigate(['./seconnecterformateur']);
   }
@@ -39,9 +41,10 @@ export class HomeComponent {
     this.router.navigate(['./accparticipant']);
   }
   GoToParticipantLogin() {
-this.router.navigate(['/home']).then(() => {
-  window.scrollTo(0, 0);
-});  }
+    this.router.navigate(['/home']).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
   seconnecteruser() {
     this.router.navigate(['./creercompte']);
   }
@@ -54,7 +57,7 @@ this.router.navigate(['/home']).then(() => {
     if (this.loginForm.valid) {
       this.userService.login(this.loginForm.value).subscribe(
         (response: any) => {
-             localStorage.setItem('participant', JSON.stringify(response));
+          localStorage.setItem('participant', JSON.stringify(response));
           this.snackBar.open('Connexion réussite', 'Fermer', {
             duration: 5000,
           });
@@ -72,6 +75,6 @@ this.router.navigate(['/home']).then(() => {
           console.error('Error:', error);
         }
       );
-    } 
+    }
   }
 }

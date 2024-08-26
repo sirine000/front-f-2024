@@ -37,6 +37,8 @@ import { AjouteroffreComponent } from './ajouteroffre/ajouteroffre.component';
 import { ListeoffresComponent } from './listeoffres/listeoffres.component';
 import { AccueilformateurComponent } from './accueilformateur/accueilformateur.component';
 import { AccparticipantComponent } from './accparticipant/accparticipant.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -46,6 +48,8 @@ const routes: Routes = [
   { path: 'ajouterformateur', component: AjouterFormateurComponent },
   { path: 'listeFormateur', component: ListeFormateurComponent },
   { path: 'listepar', component: ListeparticipantComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
   {
     path: 'postcycleetformateur',
     component: AddCycleComponent,
@@ -143,10 +147,13 @@ const routes: Routes = [
     canActivate: [AdminGuard],
   },
   {
-    path:'accformateur' , component:AccueilformateurComponent
-  },{
-    path:"accparticipant",component:AccparticipantComponent
-  }
+    path: 'accformateur',
+    component: AccueilformateurComponent,
+  },
+  {
+    path: 'accparticipant',
+    component: AccparticipantComponent,
+  },
 ];
 
 @NgModule({

@@ -27,14 +27,14 @@
 
       <br><br><br><br>
 
-      <input type="text" class="inputField" formControlName="email" placeholder="Email" >  
+      <input type="text" class="inputField" formControlName="email" placeholder="Email" >
       <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
      <br>
         <div class="alert " *ngIf="loginForm.get('email')?.errors?.['required']">
         Champs requis !
         </div>
 
-       
+
         <div class="alert " *ngIf="loginForm.get('email')?.errors?.['email']">
           Type email requis !
         </div>
@@ -61,7 +61,7 @@
 
     <button id="but" type="submit" class="ente">se connecter</button>
 
-              <a class="forgotLink" href="#">mot de passe oublié ?</a>
+      <a class="forgotLink" (click)="forgotPassword()">mot de passe oublié ?</a>
   </form>
 <!-- <img src="../../assets/images/forme.gif "> -->
 </div>
@@ -74,7 +74,7 @@
     <!-- <img src="../../assets/images/EXPLORE TON POTENTIEL (5).png" alt="" width="60" height="60" class="logo2"> -->
 
       <!-- <h2> EXPLORE &nbsp; TON  &nbsp; POTENTIEL  </h2> -->
-<!-- 
+<!--
       <span>Pour vous inscrire à nos formations
         <br>Créez votre compte !</span><br><br> -->
     <!-- <p>Vous-voulez améliorer vos compétence ? <br> Faire des cours en ligne ou
