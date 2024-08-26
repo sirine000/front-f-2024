@@ -33,11 +33,13 @@
               <img [src]="'data:image/jpeg;base64,  '+item.bonDeCommande" alt="Bon de commande"     class="img-thumbnail"
                 style="max-width: 200px; cursor: pointer;max-height:100px;"
                 (click)="openModal(item.bonDeCommande)" />
-            </div></td>
+            </div>
+          <div class="alert">type </div>
+          </td>
 
-<td>{{ item.verifier ? 'Vérifié' : 'Pas encore vérifié' }}</td>
+<td>{{ item.verifier ? 'Vérifié' : 'Pas encore vérifié ' }}</td>
 <td>
-  <button class="btn btn-primary" (click)="verifierCommande(item.id)" [disabled]="item.verifier">Vérifier</button>
+  <button class="btn btn-primary" (click)="verifierCommande(item.id)" [disabled]="item.verifier">Accepter</button>
 </td>
 
 </tr>

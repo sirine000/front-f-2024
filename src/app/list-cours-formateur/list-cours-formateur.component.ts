@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormateurService } from '../formateur.service';
+import { CoursServiceService } from '../cours-service.service';
 
 @Component({
   selector: 'app-list-cours-formateur',
@@ -10,7 +11,7 @@ export class ListCoursFormateurComponent implements OnInit {
   coursList: any[] = [];
   message: string = '';
 
-  constructor(private formateurService: FormateurService) {}
+  constructor(private formateurService: FormateurService,private coursService:CoursServiceService) {}
 
   ngOnInit(): void {
     this.loadCoursForConnectedFormateur();
@@ -69,4 +70,54 @@ export class ListCoursFormateurComponent implements OnInit {
     const blobUrl = URL.createObjectURL(blob);
     window.open(blobUrl, '_blank');
   }
+
+
+
+
+  deleteCours(id: number): void {
+    if (confirm('Vous êtes sûr de vouloir supprimer tous?')) {
+      this.coursService.deleteCours(id).subscribe({
+        next: () => {
+          console.log('Course deleted successfully');
+          window.location.reload();
+          // Implement logic to update your view, such as refreshing the list of courses
+        },
+        error: (err) => {
+          console.error('Error deleting course:', err);
+        }
+      });
+      
+
+    }
+  }
+
+//   deleteFile(id: number, fileIndex: number): void {
+//     if (confirm('Are you sure you want to delete this course?')) {
+//     this.coursService.deleteFileFromCourse(id, fileIndex).subscribe({
+//         next: () => {
+//             console.log(`File ${fileIndex + 1} from course ${id} deleted successfully`);
+//             // Refresh the course list or update the UI as needed
+//         },
+//         error: (err) => {
+//             console.error('Error deleting file:', err);
+//         }
+//     });
+//   }
+// }
+
+
+// deleteFile(id: number, fileIndex: number): void {
+//   const fileName = this.coursList.find(cours => cours.id === id)?.fileContents[fileIndex];
+//   if (fileName) {
+//     this.coursService.deleteFile(id, fileName).subscribe(
+//       () => {
+//         this.message = 'Fichier supprimé avec succès';
+//         this.loadCoursForConnectedFormateur(); // Reload courses to reflect changes
+//       },
+//       error => {
+//         this.message = 'Erreur lors de la suppression du fichier: ' + error.message;
+//       }
+//     );
+//   }
+// }
 }

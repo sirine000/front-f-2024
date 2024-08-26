@@ -8,13 +8,13 @@
 <div class="container mt-5 justfiy-content-center align-items-center pl-5 ">
    <form class="form"   [formGroup]="forminput"  >
 
-    <img src="../../assets/images/cccc.gif" class="timee">
+    <img src="../../assets/images/alah.jpg" class="timee">
        <div class="form-group">
          <label for="exampleInputEmail1">Nom d'offre</label>
          <label>
           <!-- <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span> -->
       </label>
-         <input type="text" class="form-control" id="nomOffre"  placeholder="nom d'offre" name="nomOffre"   formControlName="nomOffre">
+         <input type="text"  class="input" class="form-control" id="nomOffre"   name="nomOffre"   formControlName="nomOffre">
 
         <div  *ngIf="forminput.get('nomOffre')?.invalid && (forminput.get('nomOffre')?.dirty || forminput.get('nomOffre')?.touched)">
           <div class="alert alert-danger " *ngIf="forminput.get('nomOffre')?.errors?.['required']">
@@ -26,7 +26,7 @@
 
        <div class="form-group">
          <label for="exampleInputPassword1">Description  </label>
-         <input type="Text" class="form-control" id="description" placeholder="Description" name="description"  formControlName="description">
+         <input type="Text" class="input" class="form-control" id="description"  name="description"  formControlName="description">
          <div  *ngIf="forminput.get('description')?.invalid && (forminput.get('description')?.dirty || forminput.get('description')?.touched)">
           <div class="alert alert-danger " *ngIf="forminput.get('description')?.errors?.['required']">
            champs requis !
@@ -37,7 +37,7 @@
 
      <div class="form-group">
          <label for="responsabilite">Responsabilités du poste  </label>
-         <input type="Text" class="form-control" id="responsabilite" placeholder="Responsabilités du poste  " name="responsabilite"  formControlName="responsabilite">
+         <input type="Text" class="input" class="form-control" id="responsabilite"  name="responsabilite"  formControlName="responsabilite">
          <div  *ngIf="forminput.get('responsabilite')?.invalid && (forminput.get('responsabilite')?.dirty || forminput.get('responsabilite')?.touched)">
           <div class="alert alert-danger " *ngIf="forminput.get('responsabilite')?.errors?.['required']">
            champs requis !
@@ -48,7 +48,7 @@
 
      <div class="form-group">
          <label for="qualifications">Qualifications</label>
-         <input type="Text" class="form-control" id="qualifications" placeholder="Qualifications" name="qualifications"  formControlName="qualifications">
+         <input type="Text" class="input" class="form-control" id="qualifications" name="qualifications"  formControlName="qualifications">
          <div  *ngIf="forminput.get('qualifications')?.invalid && (forminput.get('qualifications')?.dirty || forminput.get('qualifications')?.touched)">
           <div class="alert alert-danger " *ngIf="forminput.get('qualifications')?.errors?.['required']">
            champs requis !

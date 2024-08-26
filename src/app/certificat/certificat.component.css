@@ -81,3 +81,29 @@ img{
   height: 50px;
   border-radius: 50%;
 }
+
+
+
+
+
+
+
+
+.certificat {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+.corps {
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}

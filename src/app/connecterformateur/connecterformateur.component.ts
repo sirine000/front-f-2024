@@ -21,12 +21,12 @@ export class ConnecterformateurComponent implements OnInit {
   ) {}
 
   gotoformateurAcceuil() {
-    this.router.navigate(['./formateurMenu']);
+    this.router.navigate(['./accformateur']);
   }
   forminput!: FormGroup;
   ngOnInit(): void {
     this.forminput = this.formBuilder.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required ,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }

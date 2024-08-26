@@ -68,8 +68,8 @@ export class CompteparticipantComponent {
         .subscribe(
           () => {
             this.loadParticipant();
-            this.snackBar.open('Photo téléchargée avec succès', 'Fermer', {
-              duration: 3000,
+            this.snackBar.open('Photo  enregistrée avec succès', 'Fermer', {
+              duration: 5000,
             });
           },
           (error: any) => {
@@ -78,7 +78,7 @@ export class CompteparticipantComponent {
               'Échec du téléchargement de la photo',
               'Fermer',
               {
-                duration: 3000,
+                duration: 5000,
               }
             );
           }

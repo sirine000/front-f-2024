@@ -19,8 +19,8 @@ export class HomeComponent {
     private snackBar: MatSnackBar
   ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      email: ['',[Validators.required, Validators.email]],
+      password: ['',[Validators.required,Validators.minLength(8)]],
     });
   }
 
@@ -36,7 +36,7 @@ export class HomeComponent {
     this.router.navigate(['./seconnecterformateur']);
   }
   GoToParticipantSpace() {
-    this.router.navigate(['./user']);
+    this.router.navigate(['./accparticipant']);
   }
   GoToParticipantLogin() {
 this.router.navigate(['/home']).then(() => {
@@ -56,7 +56,7 @@ this.router.navigate(['/home']).then(() => {
         (response: any) => {
              localStorage.setItem('participant', JSON.stringify(response));
           this.snackBar.open('Connexion réussite', 'Fermer', {
-            duration: 3000,
+            duration: 5000,
           });
 
           this.GoToParticipantSpace();
@@ -67,11 +67,11 @@ this.router.navigate(['/home']).then(() => {
             errorMessage = error.error;
           }
           this.snackBar.open(errorMessage, 'Fermer', {
-            duration: 3000,
+            duration: 5000,
           });
           console.error('Error:', error);
         }
       );
-    }
+    } 
   }
 }

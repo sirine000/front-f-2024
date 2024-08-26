@@ -35,6 +35,10 @@ export class UserComponent {
 
   }
 
+  gotoacc(){
+    this.router.navigate(['accparticipant'])
+  }
+
   comptee() {
     this.router.navigate(['compteParticipant']);
   }
@@ -42,5 +46,10 @@ export class UserComponent {
     localStorage.removeItem('user');
 
     this.router.navigate(['home']);
+
+ 
+  
+      // window.location.reload();
+    
   }
 }

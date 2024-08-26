@@ -135,3 +135,7 @@ input {
   margin-bottom: 2%;
   margin-top: 2%;
 }
+.alert{
+  font-size: 20px;
+  text-align: center;
+}

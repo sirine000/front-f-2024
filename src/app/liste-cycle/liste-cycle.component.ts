@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Formateur } from 'src/models/formateur';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 declare var $: any;
@@ -21,6 +22,7 @@ export class ListeCycleComponent implements OnInit {
   cycletodelete!: CycleEntity;
   cyclee!: CycleEntity;
   formateurs: any[] = [];
+
   listecycle: any[] = [];
   updateForm!: FormGroup;
   selectedCycle: any;
@@ -130,6 +132,7 @@ export class ListeCycleComponent implements OnInit {
     });
     $('#updateModal').modal('show');
   }
+  private snackBar!: MatSnackBar;
 
   onSubmitUpdate(): void {
     if (this.updateForm.valid) {
@@ -151,9 +154,14 @@ export class ListeCycleComponent implements OnInit {
         updatedCycle
       ).subscribe(
         (response) => {
-          console.log('Cycle updated successfully', response);
+          console.log('Cycle modifié avec succès ', response);
+        
           this.closeUpdateModal();
+       
           this.loadCycles(); // Reload cycles to reflect changes
+
+        
+
         },
         (error) => {
           console.error('Erreur lors de la mise à jour du cycle:', error);

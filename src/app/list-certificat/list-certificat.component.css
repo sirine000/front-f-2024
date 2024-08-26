@@ -1,5 +1,5 @@
 .formateurs {
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 .tab {
@@ -29,7 +29,6 @@ a {
 }
 
 table {
-  margin-top: -35%;
   margin-bottom: 20%;
   /* background-color: #fffec2; */
   color: rgb(0, 0, 0);
@@ -40,9 +39,7 @@ table {
   box-shadow: 35px 35px 100px #cacaca,
     -35px -35px 100px #f6f6f6;
   font-family: cursive;
-
-
-}
+margin-top: -540%}
 
 button {
   height: 20%;
@@ -78,7 +75,8 @@ th {
   font-size: 185%;
 }
 
-#deleteModal,
+/* #deleteModal,
 #updateModal {
   font-family: cursive;
-}
+} */
+

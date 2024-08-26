@@ -7,19 +7,23 @@ import { Formateur } from 'src/models/formateur';
   templateUrl: './formateur-menu.component.html',
   styleUrls: ['./formateur-menu.component.css'],
 })
-export class FormateurMenuComponent implements OnInit {
+export class FormateurMenuComponent  {
   formateurconnecte!: Formateur;
-  ngOnInit(): void {
-    const formateurdata = localStorage.getItem('formateur');
-    if (formateurdata) {
-      this.formateurconnecte = JSON.parse(formateurdata);
-    }
-  }
+  // ngOnInit(): void {
+  //   const formateurdata = localStorage.getItem('formateur');
+  //   if (formateurdata) {
+  //     this.formateurconnecte = JSON.parse(formateurdata);
+  //   }
+  // }
 
   constructor(private router: Router) {}
   idFormateur!: number;
   gotocycledeformateur() {
     this.router.navigate(['/formateurscycles']);
+  }
+
+  accformateur(){
+    this.router.navigate(["/accformateur"]);
   }
   deconnection() {
     localStorage.removeItem('formateur');

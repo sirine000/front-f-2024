@@ -35,7 +35,7 @@ export class CREERCompteComponent {
 
     this.participantService.addParticipant(this.participant).subscribe(
       (response: any) => {
-        console.log('Participant added successfully', response);
+        console.log('Participant ajouté avec succès !', response);
             this.snackBar.open(response.message, 'Fermer', {
               duration: 3000,
             });

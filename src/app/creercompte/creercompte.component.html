@@ -8,30 +8,87 @@
       <div class="inputBox m-2">
         <input type="text" [(ngModel)]="participant.nom" name="nom" required>
         <span class="user">Nom</span>
+
+        <div *ngIf="participantForm.form.get('nom')?.invalid && (participantForm.form.get('nom')?.dirty || participantForm.form.get('nom')?.touched)">
+          <div class="alert alert-danger" *ngIf="participantForm.form.get('nom')?.errors?.['required']">
+            Champs requis !
+          </div>
+        
+        </div>
+
+
       </div>
       <div class="inputBox m-2">
       <input type="text" [(ngModel)]="participant.prenom" name="prenom" required>
         <span class="user">Prénom</span>
+
+        <div *ngIf="participantForm.form.get('prenom')?.invalid && (participantForm.form.get('prenom')?.dirty || participantForm.form.get('prenom')?.touched)">
+          <div class="alert alert-danger" *ngIf="participantForm.form.get('prenom')?.errors?.['required']">
+            Champs requis !
+          </div>
+       
+        </div>
+
+
+
       </div>
+
+
+
+
 
       <div class="inputBox m-2">
         <input type="email" [(ngModel)]="participant.email" name="email" required>
         <span class="user">Adresse Email</span>
+
+        <div *ngIf="participantForm.form.get('email')?.invalid && (participantForm.form.get('email')?.dirty || participantForm.form.get('email')?.touched)">
+          <div class="alert alert-danger" *ngIf="participantForm.form.get('email')?.errors?.['required']">
+            Champs requis avec un type email !
+          </div>
+          <div class="alert alert-danger" *ngIf="participantForm.form.get('email')?.errors?.['email']">
+            Type email requis.
+          </div>
+        </div>
+      
       </div>
       <div class="inputBox m-2">
         <input type="password" [(ngModel)]="participant.password" name="password" required>
         <span>Mot de passe</span>
+        <div *ngIf="participantForm.form.get('password')?.invalid && (participantForm.form.get('password')?.dirty || participantForm.form.get('password')?.touched)">
+
+          
+          <div class="alert alert-danger" *ngIf="participantForm.form.get('password')?.errors?.['required']">
+            Champs requis !
+          </div>
+          <!-- <div class="alert alert-danger" *ngIf="participantForm.form.get('password')?.errors?.['minlength']">
+            Le mot de passe doit contenir au moins 8 caractères !
+          </div> -->
+        </div>
       </div>
       <div class="inputBox m-2">
         <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
         <span>Confirmer le mot de passe</span>
+
+
+        <div *ngIf="participantForm.form.get('confirmPassword')?.invalid && (participantForm.form.get('confirmPassword')?.dirty || participantForm.form.get('confirmPassword')?.touched)">
+
+      
+          <div class="alert alert-danger " *ngIf="participantForm.form.get('confirmPassword')?.errors?.['required']">
+            Champs requis !
+          </div>
+          <!-- <div class="alert alert-danger" *ngIf="participantForm.form.get('confirmPassword')?.errors?.['minlength']">
+            Le mot de passe doit contenir au moins 8 caractères !
+          </div> -->
+        </div>
       </div>
+
       <button class="enter m-2" type="submit" [disabled]="!participantForm.form.valid || !passwordsMatch">Ajouter</button>
             <button class="home m-2" type="button" (click)="goToHome()">Accueil</button>
 
-      <div *ngIf="!passwordsMatch && participantForm.submitted">
+      <div class="alert alert-danger" *ngIf="!passwordsMatch && participantForm.submitted">
         <p class="error-message">Les mots de passe ne correspondent pas.</p>
       </div>
     </form>
   </div>
 </div>
+

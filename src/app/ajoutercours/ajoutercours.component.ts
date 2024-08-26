@@ -48,7 +48,7 @@ export class AjoutercoursComponent implements OnInit {
     }
 
     if (!this.nomCours || !this.idCycle) {
-      this.message = "Veuillez fournir le nom du cours et l'ID du cycle.";
+      this.message = "Veuillez remplir tous les champs !";
       return;
     }
     console.log(this.selectedFiles);

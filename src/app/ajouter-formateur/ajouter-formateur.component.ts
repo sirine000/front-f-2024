@@ -53,6 +53,7 @@ export class AjouterFormateurComponent  {
           error.error.message || 'Une erreur est survenue.';
         this.snackBar.open(error.error.message, 'Fermer', {
           duration: 3000,
+          
         });
       }
     );

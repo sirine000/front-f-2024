@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cours } from 'src/models/cours';
@@ -48,4 +48,15 @@ export class CoursServiceService {
       params: { cycleId },
     });
   }
+
+
+
+//   deleteFileFromCourse(id: number, fileIndex: number): Observable<void> {
+//     return this.http.delete<void>(`${this.coursUrl}/delete-file/${id}/${fileIndex}`);
+// }
+
+  deleteCours(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.coursUrl}/delete/${id}`);
+  }
+  
 }

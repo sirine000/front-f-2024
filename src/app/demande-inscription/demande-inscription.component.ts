@@ -51,14 +51,14 @@ export class DemandeInscriptionComponent implements OnInit {
     this.demandeService.verifierCommande(id).subscribe(
       (response) => {
         this.snackBar.open('La commande a été vérifiée avec succès.', 'Fermer', {
-          duration: 3000,
+          duration: 5000,
         });
         this.loadDemandes(); // Reload the commandes to update the verification status
       },
       (error) => {
         console.error('Erreur lors de la vérification de la commande:', error);
         this.snackBar.open('Erreur lors de la vérification de la commande.', 'Fermer', {
-          duration: 3000,
+          duration: 5000,
         });
       }
     );

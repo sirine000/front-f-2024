@@ -96,7 +96,7 @@ export class ListeFormateurComponent implements OnInit {
       (formateur: Formateur) => {
         console.log('Formateur activated', formateur);
         this.snackBar.open('Formateur activé', 'Fermer', {
-          duration: 3000,
+          duration: 5000,
         });
         this.loadFormateurs();
       },
@@ -109,9 +109,9 @@ export class ListeFormateurComponent implements OnInit {
   deactivateFormateur(id: number) {
     this.formateurService.deactivateFormateur(id).subscribe(
       (formateur: Formateur) => {
-        console.log('Formateur deactivated', formateur);
-        this.snackBar.open('Formateur deactivé', 'Fermer', {
-          duration: 3000,
+        console.log('Formateur désactivaté', formateur);
+        this.snackBar.open('Formateur désactivé', 'Fermer', {
+          duration: 5000,
         });
         this.loadFormateurs();
       },

@@ -85,7 +85,7 @@
 
               <div class="form-group col-md-6">
               <label for="description">Description</label>
-              <input id="description" class="form-control" type="text" formControlName="description">
+              <input id="description" class="form-control" type="textholder" formControlName="description">
               <div *ngIf="forminput.get('description')?.invalid && (forminput.get('description')?.dirty || forminput.get('description')?.touched)">
                 <div class="alert alert-danger" *ngIf="forminput.get('description')?.errors?.['required']">
                   Champs requis !

@@ -109,7 +109,7 @@ button{
   /* background: #e4d39c; */
   /* background: transparent; */
   border-radius: 50px;
-  background: #9d8a7091;
+  background: #f0f0f0;
   /* box-shadow:  20px 20px 60px #bebebe,
                -20px -20px 60px #ffffff; */
                font-family: cursive;
@@ -140,9 +140,9 @@ button{
   
 }
 .container{
-  margin-top: -35%;
-  margin-top: -32% ;
+  margin-top: -27%;
   margin-bottom: 50%;
+  margin-left: 2%;
  
 }
 
@@ -150,12 +150,14 @@ button{
   border: 2px solid black;
 
 }
-
+.button{
+  background:black;
+}
 
 .button {
---color: #edd5adc1;
+/* --color: #adbeedc1; */
 padding: 0.8em 1.7em;
-background-color:var(--color);
+/* background-color:var(--color); */
 border-radius: .3em;
 position: relative;
 overflow: hidden;
@@ -167,9 +169,9 @@ font-size: 17px;
 font-family: inherit;
 /* text-transform: uppercase; */
 font-weight: bold ;
-color: var(--color);
+/* color: var(--color); */
 z-index: 1;
-background-color: #eae3e3;
+background-color: #000088;
 width: 100%;
 height: 50px;
 }

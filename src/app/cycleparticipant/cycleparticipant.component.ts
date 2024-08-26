@@ -28,6 +28,8 @@ export class CycleparticipantComponent implements OnInit {
     private inscriptionService: InscriptionService,
     private snackBar: MatSnackBar
   ) {}
+ch:string="pas de cycle pour le moment !";
+
 
   ngOnInit(): void {
     this.loadCycles();
@@ -69,10 +71,10 @@ export class CycleparticipantComponent implements OnInit {
       this.inscriptionService.submitRegistration(formData).subscribe(
         (response) => {
           this.snackBar.open(
-            'La commande a été ajoutée. Veuillez attendre la vérification de votre bon de commande.',
+            'Votre inscription est ajoutée. Veuillez attendre la vérification de votre bon de commande pour accéder à vos cours !',
             'Fermer',
             {
-              duration: 3000,
+              duration: 5000,
             }
           );
           // Reset the form after submission
@@ -109,4 +111,9 @@ export class CycleparticipantComponent implements OnInit {
       }
     );
   }
+
+
+  
+
+  
 }

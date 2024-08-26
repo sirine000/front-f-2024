@@ -35,6 +35,8 @@ import { ListeCandidatsComponent } from './liste-candidats/liste-candidats.compo
 import { ListCertificatComponent } from './list-certificat/list-certificat.component';
 import { AjouteroffreComponent } from './ajouteroffre/ajouteroffre.component';
 import { ListeoffresComponent } from './listeoffres/listeoffres.component';
+import { AccueilformateurComponent } from './accueilformateur/accueilformateur.component';
+import { AccparticipantComponent } from './accparticipant/accparticipant.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -140,6 +142,11 @@ const routes: Routes = [
     component: ListeoffresComponent,
     canActivate: [AdminGuard],
   },
+  {
+    path:'accformateur' , component:AccueilformateurComponent
+  },{
+    path:"accparticipant",component:AccparticipantComponent
+  }
 ];
 
 @NgModule({

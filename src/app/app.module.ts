@@ -46,6 +46,8 @@ import { ListeCandidatsComponent } from './liste-candidats/liste-candidats.compo
 import { ListCertificatComponent } from './list-certificat/list-certificat.component';
 import { AjouteroffreComponent } from './ajouteroffre/ajouteroffre.component';
 import { ListeoffresComponent } from './listeoffres/listeoffres.component';
+import { AccueilformateurComponent } from './accueilformateur/accueilformateur.component';
+import { AccparticipantComponent } from './accparticipant/accparticipant.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,8 @@ import { ListeoffresComponent } from './listeoffres/listeoffres.component';
     ListCertificatComponent,
     AjouteroffreComponent,
     ListeoffresComponent,
+    AccueilformateurComponent,
+    AccparticipantComponent,
   ],
   imports: [
     BrowserModule,
